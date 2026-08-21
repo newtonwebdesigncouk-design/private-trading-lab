@@ -8,6 +8,7 @@ RUN addgroup --system lab && adduser --system --ingroup lab lab
 COPY pyproject.toml README.md ./
 COPY app ./app
 COPY scripts ./scripts
+COPY reports/phase2_demo_report.json ./reports/phase2_demo_report.json
 RUN python -m pip install --no-cache-dir .
 RUN mkdir -p /laboratory/data/cache && chown -R lab:lab /laboratory
 USER lab

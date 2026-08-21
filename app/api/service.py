@@ -1,7 +1,10 @@
 """Read model used by the local API and dashboard clients."""
 
+import json
 from collections import Counter
 from datetime import UTC, datetime
+from pathlib import Path
+from typing import Any
 
 from app.backtesting import BacktestConfig, BacktestEngine
 from app.backtesting.models import BacktestResult
@@ -43,6 +46,121 @@ class LaboratoryService:
         )
         self.scores: dict[str, StrategyScore] = {
             result.strategy.version_key: score_strategy(result) for result in self.results
+        }
+        self.phase2_demo_report = self._load_phase2_demo_report()
+
+    @staticmethod
+    def _load_phase2_demo_report() -> dict[str, Any] | None:
+        report_path = Path(__file__).resolve().parents[2] / "reports" / "phase2_demo_report.json"
+        try:
+            payload = json.loads(report_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return None
+        return payload if isinstance(payload, dict) else None
+
+    def active_dataset_id(self) -> str:
+        if self.phase2_demo_report is not None:
+            dataset = self.phase2_demo_report.get("dataset", {})
+            dataset_id = dataset.get("dataset_id") if isinstance(dataset, dict) else None
+            if isinstance(dataset_id, str):
+                return dataset_id
+        return "synthetic-v2:seed-1729:2022-2024"
+
+    def phase2_demo_summary(self) -> dict[str, object]:
+        """Return a compact, immutable read model of the frozen Phase 2 demonstration."""
+
+        report = self.phase2_demo_report
+        if report is None:
+            return {
+                "available": False,
+                "reason": "The frozen Phase 2 demonstration report is not installed.",
+            }
+        dataset = report.get("dataset", {})
+        portfolio = report.get("portfolio", {})
+        research_batch = report.get("research_batch", {})
+        rankings = report.get("reference_rankings", [])
+        instruments = dataset.get("instruments", []) if isinstance(dataset, dict) else []
+        compact_instruments = [
+            {
+                "asset": item.get("asset"),
+                "rows": item.get("rows"),
+                "actual_start": item.get("actual_start"),
+                "actual_end": item.get("actual_end"),
+                "diagnostics": item.get("diagnostics"),
+            }
+            for item in instruments
+            if isinstance(item, dict)
+        ]
+        compact_rankings = [
+            {
+                key: item.get(key)
+                for key in (
+                    "strategy",
+                    "strategy_version",
+                    "instrument",
+                    "asset_class",
+                    "lifecycle_state",
+                    "paper_qualified",
+                    "score",
+                    "decision_reasons",
+                    "holdout",
+                    "benchmark",
+                )
+            }
+            for item in rankings
+            if isinstance(item, dict)
+        ]
+        return {
+            "available": True,
+            "report_version": report.get("report_version"),
+            "generated_at": report.get("generated_at"),
+            "code_revision": report.get("code_revision"),
+            "data_validation": report.get("data_validation"),
+            "dataset": {
+                "dataset_id": dataset.get("dataset_id") if isinstance(dataset, dict) else None,
+                "provider": dataset.get("provider") if isinstance(dataset, dict) else None,
+                "actual_start": dataset.get("actual_start") if isinstance(dataset, dict) else None,
+                "actual_end": dataset.get("actual_end") if isinstance(dataset, dict) else None,
+                "adjustment_policy": (
+                    dataset.get("adjustment_policy") if isinstance(dataset, dict) else None
+                ),
+                "instruments": compact_instruments,
+            },
+            "portfolio": portfolio,
+            "research_batch": {
+                "batch_id": (
+                    research_batch.get("batch_id") if isinstance(research_batch, dict) else None
+                ),
+                "candidate_count": (
+                    research_batch.get("candidate_count") if isinstance(research_batch, dict) else 0
+                ),
+                "candidate_space_size": (
+                    research_batch.get("candidate_space_size")
+                    if isinstance(research_batch, dict)
+                    else 0
+                ),
+                "candidate_decisions": (
+                    research_batch.get("candidate_decisions", [])
+                    if isinstance(research_batch, dict)
+                    else []
+                ),
+                "selected_for_locked_holdout": (
+                    research_batch.get("selected_for_locked_holdout", [])
+                    if isinstance(research_batch, dict)
+                    else []
+                ),
+                "multiple_testing": (
+                    research_batch.get("multiple_testing", {})
+                    if isinstance(research_batch, dict)
+                    else {}
+                ),
+            },
+            "reference_rankings": compact_rankings,
+            "paper_qualified_strategies": report.get("paper_qualified_strategies", []),
+            "safety": report.get("safety"),
+            "threshold_policy": report.get("threshold_policy"),
+            "universe": report.get("universe"),
+            "disclaimer": report.get("disclaimer"),
         }
 
     def result_for(self, version_key: str) -> BacktestResult | None:
@@ -90,6 +208,36 @@ class LaboratoryService:
         }
 
     def data_health(self) -> dict[str, object]:
+        if self.phase2_demo_report is not None:
+            dataset = self.phase2_demo_report.get("dataset", {})
+            validation = self.phase2_demo_report.get("data_validation", {})
+            instruments = dataset.get("instruments", []) if isinstance(dataset, dict) else []
+            missing_data = {
+                str(item.get("asset", {}).get("symbol", "unknown")): len(
+                    item.get("diagnostics", {}).get("missing_expected_timestamps", [])
+                )
+                for item in instruments
+                if isinstance(item, dict)
+            }
+            return {
+                "providers": [provider.model_dump(mode="json") for provider in self.providers],
+                "dataset_snapshots": [
+                    {
+                        "dataset_id": dataset.get("dataset_id"),
+                        "provider": dataset.get("provider"),
+                        "actual_start": dataset.get("actual_start"),
+                        "actual_end": dataset.get("actual_end"),
+                        "instrument_count": len(instruments),
+                        "manifest_checksum": dataset.get("manifest_checksum"),
+                    }
+                ],
+                "freshness": {"phase2_dataset": dataset.get("actual_end")},
+                "validation_warnings": (
+                    validation.get("warnings", []) if isinstance(validation, dict) else []
+                ),
+                "missing_data": missing_data,
+                "note": "Frozen, content-addressed Phase 2 demonstration snapshot.",
+            }
         return {
             "providers": [provider.model_dump(mode="json") for provider in self.providers],
             "dataset_snapshots": [],
