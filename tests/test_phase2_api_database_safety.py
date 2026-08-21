@@ -46,6 +46,7 @@ def test_phase2_api_is_read_only_and_exposes_required_read_models() -> None:
         "/paper/orders",
         "/paper/fills",
         "/paper/audit",
+        "/phase2/demo",
     )
     for path in paths:
         response = client.get(path)
@@ -54,6 +55,17 @@ def test_phase2_api_is_read_only_and_exposes_required_read_models() -> None:
     assert any(item["name"] == "yahoo-chart-read-only" for item in providers)
     assert all(item["capabilities"]["read_only"] for item in providers)
     assert client.get("/paper/cycles").json()["kill_switch_engaged"] is False
+    demo = client.get("/phase2/demo").json()
+    assert demo["available"] is True
+    assert demo["dataset"]["dataset_id"] == "phase2-yahoo-demo-7e23dd823599693e"
+    assert {item["asset"]["symbol"] for item in demo["dataset"]["instruments"]} == {
+        "SPY",
+        "QQQ",
+        "BTCUSD",
+    }
+    assert demo["portfolio"]["metrics"]["total_return"] == pytest.approx(0.5670427954)
+    assert demo["research_batch"]["candidate_count"] == 12
+    assert demo["paper_qualified_strategies"] == []
     for route in application.routes:
         if getattr(route, "path", "").startswith(("/data", "/research", "/portfolio", "/paper")):
             assert getattr(route, "methods", set()) <= {"GET"}
