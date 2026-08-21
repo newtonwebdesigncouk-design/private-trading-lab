@@ -9,8 +9,9 @@ from alembic.config import Config
 from fastapi.testclient import TestClient
 from sqlalchemy import inspect
 
-from app.api.main import app
+from app.api.main import app, create_app
 from app.backtesting import BacktestEngine
+from app.config import get_settings
 from app.data.synthetic import SyntheticMarketDataProvider
 from app.database import Base, LaboratoryRepository, create_database_engine, session_factory
 from app.models.enums import AssetClass
@@ -132,6 +133,31 @@ def test_local_api_exposes_safety_portfolio_strategies_and_research() -> None:
         ).status_code
         == 404
     )
+
+
+def test_dashboard_token_protects_private_routes(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("TRADING_LAB_API_TOKEN", "test-dashboard-token")
+    get_settings.cache_clear()
+    protected_client = TestClient(create_app())
+    try:
+        assert protected_client.get("/health").status_code == 200
+        assert protected_client.get("/strategies").status_code == 401
+        assert (
+            protected_client.get(
+                "/strategies",
+                headers={"Authorization": "Bearer wrong-token"},
+            ).status_code
+            == 401
+        )
+        assert (
+            protected_client.get(
+                "/strategies",
+                headers={"Authorization": "Bearer test-dashboard-token"},
+            ).status_code
+            == 200
+        )
+    finally:
+        get_settings.cache_clear()
 
 
 @pytest.mark.integration
