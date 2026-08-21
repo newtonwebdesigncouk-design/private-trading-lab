@@ -1,0 +1,116 @@
+{
+  "actual_end": "2025-01-01T00:00:00Z",
+  "actual_start": "2020-01-02T00:00:00Z",
+  "adjustment_policy": "TOTAL_RETURN_ADJUSTED",
+  "asset_classes": [
+    "CRYPTOCURRENCY",
+    "ETF"
+  ],
+  "code_revision": "47c67f89b40db9b2eb7e8f02e12ffe917271b642",
+  "corporate_action_policy": "Total-return-adjusted OHLC is used. Yahoo dividend and split events are retained as metadata but are not separately applied, preventing double counting.",
+  "dataset_id": "phase2-yahoo-demo-7e23dd823599693e",
+  "dataset_version": "7e23dd823599693e",
+  "ingested_at": "2026-08-21T02:06:13.567975Z",
+  "instruments": [
+    {
+      "actual_end": "2025-01-01T00:00:00Z",
+      "actual_start": "2020-01-02T00:00:00Z",
+      "artifact": "cryptocurrency-yahoo-btcusd.bars.jsonl",
+      "asset": {
+        "asset_class": "CRYPTOCURRENCY",
+        "currency": "USD",
+        "exchange": "YAHOO",
+        "symbol": "BTCUSD"
+      },
+      "canonical_checksum": "14119b199087af110ba7c6ba17f1c8cbb6ccb782295489c7d6cf94bd90bb6105",
+      "corporate_action_artifact": null,
+      "corporate_action_checksum": null,
+      "corporate_action_rows": 0,
+      "diagnostics": {
+        "duplicate_rows": 0,
+        "events": [],
+        "input_rows": 1828,
+        "invalid_rows": 0,
+        "missing_expected_timestamps": [],
+        "out_of_order_rows": 0,
+        "output_rows": 1827,
+        "partial_response": false,
+        "stale": false,
+        "warnings": []
+      },
+      "raw_checksum": "70b988de016776f0c5ef59b4ebecd28804831ad0d80d29d86631141b39b216c3",
+      "rows": 1827
+    },
+    {
+      "actual_end": "2025-01-01T00:00:00Z",
+      "actual_start": "2020-01-03T00:00:00Z",
+      "artifact": "etf-yahoo-qqq.bars.jsonl",
+      "asset": {
+        "asset_class": "ETF",
+        "currency": "USD",
+        "exchange": "YAHOO",
+        "symbol": "QQQ"
+      },
+      "canonical_checksum": "a39f1fcdc117b1f8d4fd9c351414585d0d7cbc5fa94652745bf19106fdf0b2e5",
+      "corporate_action_artifact": "etf-yahoo-qqq.actions.jsonl",
+      "corporate_action_checksum": "cb618cdf4909a4ad3c251c5754ccf722962914ddb4a5a5760acf295af5b0cf34",
+      "corporate_action_rows": 20,
+      "diagnostics": {
+        "duplicate_rows": 0,
+        "events": [],
+        "input_rows": 1258,
+        "invalid_rows": 0,
+        "missing_expected_timestamps": [],
+        "out_of_order_rows": 0,
+        "output_rows": 1258,
+        "partial_response": false,
+        "stale": false,
+        "warnings": []
+      },
+      "raw_checksum": "8bdc889043a7f106c25af82b0247641975b9c3ae09441e54a5963bc94f067f3f",
+      "rows": 1258
+    },
+    {
+      "actual_end": "2025-01-01T00:00:00Z",
+      "actual_start": "2020-01-03T00:00:00Z",
+      "artifact": "etf-yahoo-spy.bars.jsonl",
+      "asset": {
+        "asset_class": "ETF",
+        "currency": "USD",
+        "exchange": "YAHOO",
+        "symbol": "SPY"
+      },
+      "canonical_checksum": "018df732d2a3aa69b4dc03f1ee27156e7dd58d2ccdca93b45b0355e2442ac86f",
+      "corporate_action_artifact": "etf-yahoo-spy.actions.jsonl",
+      "corporate_action_checksum": "1727b7fc4a50f552ec66d7fe2cf032fa83798108cf430799178ab8a1c286ae15",
+      "corporate_action_rows": 20,
+      "diagnostics": {
+        "duplicate_rows": 0,
+        "events": [],
+        "input_rows": 1258,
+        "invalid_rows": 0,
+        "missing_expected_timestamps": [],
+        "out_of_order_rows": 0,
+        "output_rows": 1258,
+        "partial_response": false,
+        "stale": false,
+        "warnings": []
+      },
+      "raw_checksum": "73ba1ef654dbbbaf44efa54b8adc3caa10a92cd1cd8cc9bb3fa73e216a2ef7a7",
+      "rows": 1258
+    }
+  ],
+  "interval": "1d",
+  "manifest_checksum": "796d442085c5b3f7df01187cd1c0ee26e059d2173a12d6177b40e5b6ac84e1d8",
+  "provider": "yahoo-chart-read-only",
+  "provider_configuration": {
+    "maximum_attempts": 3,
+    "timeout_seconds": 20.0,
+    "transport": "public-chart-http-get"
+  },
+  "provider_version": "chart-v8-v1",
+  "requested_end": "2025-01-01T00:00:00Z",
+  "requested_start": "2020-01-01T00:00:00Z",
+  "schema_version": 2,
+  "timezone_normalization": "UTC"
+}

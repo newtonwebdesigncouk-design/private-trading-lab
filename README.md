@@ -49,10 +49,10 @@ Every later command operates on the frozen dataset identifier.
 ```bash
 python -m scripts.ingest_market_data --config config/phase2_demo.json
 python -m scripts.list_datasets --snapshot-root data/snapshots
-python -m scripts.validate_dataset --dataset phase2-yahoo-demo-049a182908354067
-python -m scripts.run_portfolio_backtest --dataset phase2-yahoo-demo-049a182908354067 --universe phase2-demo-v1
-python -m scripts.run_research --dataset phase2-yahoo-demo-049a182908354067 --universe phase2-demo-v1
-python -m scripts.run_phase2_demo --dataset phase2-yahoo-demo-049a182908354067 --universe phase2-demo-v1
+python -m scripts.validate_dataset --dataset phase2-yahoo-demo-7e23dd823599693e
+python -m scripts.run_portfolio_backtest --dataset phase2-yahoo-demo-7e23dd823599693e --universe phase2-demo-v1
+python -m scripts.run_research --dataset phase2-yahoo-demo-7e23dd823599693e --universe phase2-demo-v1
+python -m scripts.run_phase2_demo --dataset phase2-yahoo-demo-7e23dd823599693e --universe phase2-demo-v1
 ```
 
 The demo writes `reports/phase2_demo_report.json`; the checked-in findings are summarized in
@@ -63,7 +63,7 @@ case.
 Persistent paper simulation is an explicit, local cycle:
 
 ```bash
-python -m scripts.run_paper_cycle --account phase2-demo --dataset phase2-yahoo-demo-049a182908354067
+python -m scripts.run_paper_cycle --account phase2-demo --dataset phase2-yahoo-demo-7e23dd823599693e
 ```
 
 The cycle is restart-safe and idempotent for its account/dataset/timestamp identity. It loads only

@@ -2,7 +2,7 @@
 
 ## Reproduction
 
-The demo uses the frozen Yahoo Chart snapshot `phase2-yahoo-demo-049a182908354067`, owner universe
+The demo uses the frozen Yahoo Chart snapshot `phase2-yahoo-demo-7e23dd823599693e`, owner universe
 `phase2-demo-v1`, and observations from January 2020 through January 2025. It contains 1,827 BTC-USD
 daily bars and 1,258 bars each for SPY and QQQ. The ETF action artifacts retain 20 distribution/split
 events each. Snapshot validation reported zero invalid, duplicate, missing-expected, partial, or
@@ -11,8 +11,8 @@ stale observations.
 Run:
 
 ```bash
-python -m scripts.validate_dataset --dataset phase2-yahoo-demo-049a182908354067
-python -m scripts.run_phase2_demo --dataset phase2-yahoo-demo-049a182908354067 --universe phase2-demo-v1 --output reports/phase2_demo_report.json
+python -m scripts.validate_dataset --dataset phase2-yahoo-demo-7e23dd823599693e
+python -m scripts.run_phase2_demo --dataset phase2-yahoo-demo-7e23dd823599693e --universe phase2-demo-v1 --output reports/phase2_demo_report.json
 ```
 
 The workflow evaluated moving-average crossover, momentum, mean-reversion, and breakout reference
