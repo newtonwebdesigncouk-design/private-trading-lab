@@ -1,0 +1,18 @@
+services:
+  api:
+    build: .
+    environment:
+      APP_ENV: development
+      DATABASE_URL: sqlite:////laboratory/data/trading_lab.db
+      TRADING_MODE: BACKTEST
+      TRADING_KILL_SWITCH: "false"
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - lab-data:/laboratory/data
+    read_only: true
+    tmpfs:
+      - /tmp
+
+volumes:
+  lab-data:
