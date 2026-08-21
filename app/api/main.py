@@ -65,7 +65,7 @@ def create_app() -> FastAPI:
             "external_order_transmission": False,
             "strategy_count": len(service.results),
             "experiment_count": len(service.results),
-            "dataset": "synthetic-v2:seed-1729:2022-2024",
+            "dataset": service.active_dataset_id(),
         }
 
     @application.get("/safety", dependencies=protected)
@@ -177,6 +177,10 @@ def create_app() -> FastAPI:
                 for index, result in enumerate(service.results, start=1)
             ]
         }
+
+    @application.get("/phase2/demo", dependencies=protected)
+    def phase2_demo() -> dict[str, object]:
+        return service.phase2_demo_summary()
 
     @application.get("/data/providers", dependencies=protected)
     def data_providers() -> dict[str, object]:
