@@ -57,3 +57,37 @@ class AdjustmentPolicy(StrEnum):
     UNADJUSTED_WITH_ACTIONS = "UNADJUSTED_WITH_ACTIONS"
     SPLIT_ADJUSTED_WITH_CASH_DIVIDENDS = "SPLIT_ADJUSTED_WITH_CASH_DIVIDENDS"
     TOTAL_RETURN_ADJUSTED = "TOTAL_RETURN_ADJUSTED"
+
+
+class ForwardTrialState(StrEnum):
+    """Paper-observation governance states; none authorises external execution."""
+
+    READY_FOR_FORWARD = "READY_FOR_FORWARD"
+    OBSERVING = "OBSERVING"
+    PAUSED_DATA_QUALITY = "PAUSED_DATA_QUALITY"
+    PAUSED_RISK = "PAUSED_RISK"
+    FAILED_FORWARD = "FAILED_FORWARD"
+    QUALIFIED_FORWARD = "QUALIFIED_FORWARD"
+    RETIRED = "RETIRED"
+
+
+class ObservationProvenance(StrEnum):
+    """Evidence provenance is independent of the closed execution-mode enum."""
+
+    GENUINE_FORWARD = "GENUINE_FORWARD"
+    REPLAY = "REPLAY"
+
+
+class ForwardCycleStatus(StrEnum):
+    IN_PROGRESS = "IN_PROGRESS"
+    COMPLETED = "COMPLETED"
+    BLOCKED = "BLOCKED"
+    FAILED = "FAILED"
+    DUPLICATE = "DUPLICATE"
+
+
+class DegradationSeverity(StrEnum):
+    HEALTHY = "HEALTHY"
+    WARNING = "WARNING"
+    PAUSE = "PAUSE"
+    FAIL = "FAIL"

@@ -176,3 +176,186 @@ class PaperPortfolioSnapshotRow(Base):
     cycle_id: Mapped[str] = mapped_column(ForeignKey("paper_cycles.cycle_id"), index=True)
     timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
     account: Mapped[dict[str, Any]] = mapped_column(JSON)
+
+
+class ForwardTrialRow(Base):
+    __tablename__ = "forward_trials"
+
+    trial_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    portfolio_id: Mapped[str] = mapped_column(String(128), index=True)
+    strategy_version: Mapped[str] = mapped_column(String(180), index=True)
+    configuration_fingerprint: Mapped[str] = mapped_column(String(64), unique=True)
+    provenance: Mapped[str] = mapped_column(String(32), index=True)
+    state: Mapped[str] = mapped_column(String(64), index=True)
+    manifest: Mapped[dict[str, Any]] = mapped_column(JSON)
+    failed_evaluations: Mapped[int] = mapped_column(Integer, default=0)
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    latest_observation_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class ForwardEvidenceManifestRow(Base):
+    __tablename__ = "forward_evidence_manifests"
+
+    manifest_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    stream_id: Mapped[str] = mapped_column(String(128), index=True)
+    sequence: Mapped[int] = mapped_column(Integer)
+    provenance: Mapped[str] = mapped_column(String(32), index=True)
+    manifest: Mapped[dict[str, Any]] = mapped_column(JSON)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+
+
+class ForwardCycleLeaseRow(Base):
+    __tablename__ = "forward_cycle_leases"
+
+    lease_key: Mapped[str] = mapped_column(String(128), primary_key=True)
+    owner: Mapped[str | None] = mapped_column(String(128), nullable=True)
+    acquired_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    expires_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True, index=True
+    )
+    cycle_id: Mapped[str | None] = mapped_column(String(128), nullable=True)
+
+
+class ForwardCycleRow(Base):
+    __tablename__ = "forward_cycles"
+
+    cycle_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    portfolio_id: Mapped[str] = mapped_column(String(128), index=True)
+    evidence_manifest_id: Mapped[str] = mapped_column(String(128), index=True)
+    provenance: Mapped[str] = mapped_column(String(32), index=True)
+    market_timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    status: Mapped[str] = mapped_column(String(32), index=True)
+    lease_owner: Mapped[str] = mapped_column(String(128))
+    retry_count: Mapped[int] = mapped_column(Integer, default=0)
+    error: Mapped[str | None] = mapped_column(Text, nullable=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
+class ForwardObservationRow(Base):
+    __tablename__ = "forward_observations"
+
+    observation_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    trial_id: Mapped[str] = mapped_column(ForeignKey("forward_trials.trial_id"), index=True)
+    cycle_id: Mapped[str] = mapped_column(ForeignKey("forward_cycles.cycle_id"), index=True)
+    evidence_manifest_id: Mapped[str] = mapped_column(String(128), index=True)
+    provenance: Mapped[str] = mapped_column(String(32), index=True)
+    symbol: Mapped[str] = mapped_column(String(64), index=True)
+    timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
+
+
+class ForwardSignalRow(Base):
+    __tablename__ = "forward_signals"
+
+    signal_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    trial_id: Mapped[str] = mapped_column(ForeignKey("forward_trials.trial_id"), index=True)
+    cycle_id: Mapped[str] = mapped_column(ForeignKey("forward_cycles.cycle_id"), index=True)
+    timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
+
+
+class ForwardOrderRow(Base):
+    __tablename__ = "forward_orders"
+
+    order_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    trial_id: Mapped[str] = mapped_column(ForeignKey("forward_trials.trial_id"), index=True)
+    cycle_id: Mapped[str] = mapped_column(ForeignKey("forward_cycles.cycle_id"), index=True)
+    status: Mapped[str] = mapped_column(String(32), index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class ForwardFillRow(Base):
+    __tablename__ = "forward_fills"
+
+    fill_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    order_id: Mapped[str] = mapped_column(String(128), index=True)
+    trial_id: Mapped[str] = mapped_column(ForeignKey("forward_trials.trial_id"), index=True)
+    cycle_id: Mapped[str] = mapped_column(ForeignKey("forward_cycles.cycle_id"), index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
+    filled_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+
+
+class ForwardBenchmarkSnapshotRow(Base):
+    __tablename__ = "forward_benchmark_snapshots"
+
+    snapshot_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    trial_id: Mapped[str] = mapped_column(ForeignKey("forward_trials.trial_id"), index=True)
+    cycle_id: Mapped[str] = mapped_column(ForeignKey("forward_cycles.cycle_id"), index=True)
+    timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    performance: Mapped[dict[str, Any]] = mapped_column(JSON)
+
+
+class ForwardPortfolioRow(Base):
+    __tablename__ = "forward_portfolios"
+
+    portfolio_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    policy_fingerprint: Mapped[str] = mapped_column(String(64))
+    provenance: Mapped[str] = mapped_column(String(32), index=True)
+    state: Mapped[dict[str, Any]] = mapped_column(JSON)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class ForwardPortfolioSnapshotRow(Base):
+    __tablename__ = "forward_portfolio_snapshots"
+
+    snapshot_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    portfolio_id: Mapped[str] = mapped_column(String(128), index=True)
+    cycle_id: Mapped[str] = mapped_column(ForeignKey("forward_cycles.cycle_id"), index=True)
+    provenance: Mapped[str] = mapped_column(String(32), index=True)
+    timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
+
+
+class ForwardLifecycleDecisionRow(Base):
+    __tablename__ = "forward_lifecycle_decisions"
+
+    decision_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    trial_id: Mapped[str] = mapped_column(ForeignKey("forward_trials.trial_id"), index=True)
+    cycle_id: Mapped[str] = mapped_column(ForeignKey("forward_cycles.cycle_id"), index=True)
+    previous_state: Mapped[str] = mapped_column(String(64))
+    new_state: Mapped[str] = mapped_column(String(64), index=True)
+    rule_id: Mapped[str] = mapped_column(String(128), index=True)
+    timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
+
+
+class ForwardDataQualityEventRow(Base):
+    __tablename__ = "forward_data_quality_events"
+
+    event_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    cycle_id: Mapped[str] = mapped_column(String(128), index=True)
+    trial_id: Mapped[str | None] = mapped_column(String(128), nullable=True, index=True)
+    timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    severity: Mapped[str] = mapped_column(String(32), index=True)
+    resolved: Mapped[bool] = mapped_column(Boolean, default=False, index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
+
+
+class ForwardDegradationEventRow(Base):
+    __tablename__ = "forward_degradation_events"
+
+    event_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    trial_id: Mapped[str] = mapped_column(ForeignKey("forward_trials.trial_id"), index=True)
+    cycle_id: Mapped[str] = mapped_column(ForeignKey("forward_cycles.cycle_id"), index=True)
+    timestamp: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    severity: Mapped[str] = mapped_column(String(32), index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
+
+
+class ForwardAuditEventRow(Base):
+    __tablename__ = "forward_audit_events"
+
+    event_id: Mapped[str] = mapped_column(String(128), primary_key=True)
+    cycle_id: Mapped[str] = mapped_column(String(128), index=True)
+    trial_id: Mapped[str | None] = mapped_column(String(128), nullable=True, index=True)
+    event_type: Mapped[str] = mapped_column(String(128), index=True)
+    occurred_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
+    payload: Mapped[dict[str, Any]] = mapped_column(JSON)
