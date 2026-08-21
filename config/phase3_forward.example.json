@@ -1,0 +1,54 @@
+{
+  "costs": {
+    "commission_bps": 2.0,
+    "fixed_fee": 0.25,
+    "minimum_commission": 0.25,
+    "slippage_bps": 3.0,
+    "spread_bps": 5.0
+  },
+  "data_policy_version": "phase3-current-data-v1",
+  "degradation_policy": {
+    "minimum_observations": 20,
+    "retire_after_failed_evaluations": 3,
+    "rolling_window": 20,
+    "version": "phase3-degradation-v1"
+  },
+  "maximum_strategy_allocation": 0.25,
+  "portfolio_id": "replace-with-new-forward-portfolio-id",
+  "qualification_policy": {
+    "maximum_data_quality_failures": 0,
+    "maximum_drawdown": 0.15,
+    "maximum_risk_breaches": 0,
+    "minimum_cost_resilience": 0.7,
+    "minimum_elapsed_days": 90,
+    "minimum_excess_return": 0.0,
+    "minimum_observations": 60,
+    "minimum_sharpe": 0.5,
+    "minimum_trades": 10,
+    "version": "phase3-qualification-v1"
+  },
+  "random_seed": 1729,
+  "risk_policy_version": "phase3-paper-risk-v1",
+  "start_timestamp": "REPLACE_WITH_CURRENT_OR_FUTURE_UTC_TIMESTAMP",
+  "starting_capital": 300000.0,
+  "trials": [
+    {
+      "allocation_weight": 0.18,
+      "baseline_profile": {
+        "annualised_volatility": 0.2,
+        "expectancy": 0.0,
+        "hit_rate": 0.5,
+        "signal_frequency": 0.4,
+        "turnover_per_observation": 0.02
+      },
+      "family_index": 1,
+      "symbol": "SPY"
+    },
+    {
+      "allocation_weight": 0.18,
+      "family_index": 3,
+      "symbol": "QQQ"
+    }
+  ],
+  "warmup_dataset_id": "phase2-yahoo-demo-7e23dd823599693e"
+}

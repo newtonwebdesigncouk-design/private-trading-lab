@@ -46,7 +46,7 @@ def require_dashboard_token(
 def create_app() -> FastAPI:
     application = FastAPI(
         title="Private Trading Laboratory",
-        version="0.2.0",
+        version="0.3.0",
         description="Private simulation-only strategy research API",
     )
 
@@ -249,6 +249,37 @@ def create_app() -> FastAPI:
     @application.get("/paper/audit", dependencies=protected)
     def paper_audit() -> dict[str, object]:
         return {"items": service.paper_read_model()["audit_events"]}
+
+    @application.get("/forward/trials", dependencies=protected)
+    def forward_trials() -> dict[str, object]:
+        return service.phase3_forward_read_model("trials")
+
+    @application.get("/forward/trials/{trial_id}", dependencies=protected)
+    def forward_trial_detail(trial_id: str) -> dict[str, object]:
+        detail = service.phase3_trial_detail(trial_id)
+        if detail is None:
+            raise HTTPException(status_code=404, detail="forward trial not found")
+        return detail
+
+    @application.get("/forward/portfolio", dependencies=protected)
+    def forward_portfolio() -> dict[str, object]:
+        return service.phase3_forward_read_model("portfolio")
+
+    @application.get("/forward/performance", dependencies=protected)
+    def forward_performance() -> dict[str, object]:
+        return service.phase3_forward_read_model("performance")
+
+    @application.get("/forward/health", dependencies=protected)
+    def forward_health() -> dict[str, object]:
+        return service.phase3_forward_read_model("health")
+
+    @application.get("/forward/cycles", dependencies=protected)
+    def forward_cycles() -> dict[str, object]:
+        return service.phase3_forward_read_model("cycles")
+
+    @application.get("/forward/data-quality", dependencies=protected)
+    def forward_data_quality() -> dict[str, object]:
+        return service.phase3_forward_read_model("data_quality")
 
     return application
 

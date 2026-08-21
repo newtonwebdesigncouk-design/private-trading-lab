@@ -3,6 +3,7 @@
 import ast
 from pathlib import Path
 
+from app.data.providers import StooqReadOnlyProvider, YahooReadOnlyProvider
 from app.models.enums import StrategyState, TradingMode
 
 FORBIDDEN_CALLABLES = {
@@ -15,6 +16,14 @@ FORBIDDEN_CALLABLES = {
     "deposit_funds",
     "withdraw_funds",
     "transfer_funds",
+    "submit_order",
+    "place_order",
+    "create_external_order",
+    "cancel_external_order",
+    "set_leverage",
+    "enable_margin",
+    "borrow_asset",
+    "open_broker_account",
 }
 FORBIDDEN_SETTINGS = {
     "broker_api_key",
@@ -23,9 +32,24 @@ FORBIDDEN_SETTINGS = {
     "exchange_api_key",
     "exchange_secret",
     "exchange_password",
+    "broker_access_token",
+    "broker_refresh_token",
+    "wallet_private_key",
+    "funding_account",
+    "margin_account",
 }
 NETWORK_IMPORTS = {"requests", "httpx", "aiohttp", "urllib", "http", "socket", "websockets"}
-FORBIDDEN_SDK_IMPORTS = {"ccxt", "ib_insync", "alpaca", "binance", "coinbase"}
+FORBIDDEN_SDK_IMPORTS = {
+    "alpaca",
+    "binance",
+    "ccxt",
+    "coinbase",
+    "ib_insync",
+    "ibapi",
+    "krakenex",
+    "oandapyV20",
+    "web3",
+}
 WRITE_HTTP_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
 
 
@@ -55,6 +79,10 @@ def scan(root: Path = Path("app")) -> list[str]:
                 and node.target.id.lower() in FORBIDDEN_SETTINGS
             ):
                 findings.append(f"{path}:{node.lineno}: forbidden trading credential setting")
+            if isinstance(node, ast.Assign):
+                names = [target.id for target in node.targets if isinstance(target, ast.Name)]
+                if any(name.lower() in FORBIDDEN_SETTINGS for name in names):
+                    findings.append(f"{path}:{node.lineno}: forbidden trading credential setting")
             imported: list[str] = []
             if isinstance(node, ast.Import):
                 imported = [alias.name.split(".")[0] for alias in node.names]
@@ -93,6 +121,20 @@ def scan(root: Path = Path("app")) -> list[str]:
                     findings.append(
                         f"{path}:{node.lineno}: provider exposes forbidden HTTP write call"
                     )
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                for decorator in node.decorator_list:
+                    if not isinstance(decorator, ast.Call) or not decorator.args:
+                        continue
+                    route = decorator.args[0]
+                    if not isinstance(route, ast.Constant) or not isinstance(route.value, str):
+                        continue
+                    function = decorator.func
+                    if (
+                        route.value.startswith("/forward")
+                        and isinstance(function, ast.Attribute)
+                        and function.attr.lower() != "get"
+                    ):
+                        findings.append(f"{path}:{node.lineno}: Phase 3 API route must be GET-only")
     if {mode.value for mode in TradingMode} != {"BACKTEST", "PAPER"}:
         findings.append("TradingMode contains a mode outside BACKTEST/PAPER")
     if "LIVE" in {state.value for state in StrategyState}:
@@ -100,8 +142,17 @@ def scan(root: Path = Path("app")) -> list[str]:
     return findings
 
 
+def provider_findings() -> list[str]:
+    findings: list[str] = []
+    for provider in (YahooReadOnlyProvider(), StooqReadOnlyProvider()):
+        capabilities = provider.provider_metadata().capabilities
+        if not capabilities.read_only or capabilities.requires_secret:
+            findings.append(f"{type(provider).__name__} must remain credential-free and read-only")
+    return findings
+
+
 def main() -> None:
-    findings = scan()
+    findings = [*scan(Path("app")), *scan(Path("scripts")), *provider_findings()]
     if findings:
         raise SystemExit("Unsafe execution surface detected:\n" + "\n".join(findings))
     print(
