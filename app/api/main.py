@@ -1,11 +1,18 @@
-"""FastAPI endpoints for a small local dashboard."""
+"""FastAPI endpoints for a small private dashboard."""
 
-from fastapi import FastAPI, HTTPException
+from hmac import compare_digest
+from typing import Annotated
+
+from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pydantic import BaseModel, ConfigDict, Field
 
 from app.api.service import service
 from app.backtesting.models import BacktestResult
+from app.config import get_settings
 from app.models.enums import TradingMode
+
+bearer_scheme = HTTPBearer(auto_error=False)
 
 
 class BacktestRunRequest(BaseModel):
@@ -19,6 +26,23 @@ def backtest_payload(result: BacktestResult) -> dict[str, object]:
     return result.model_dump(mode="json")
 
 
+def require_dashboard_token(
+    credentials: Annotated[HTTPAuthorizationCredentials | None, Depends(bearer_scheme)],
+) -> None:
+    """Require the shared dashboard token when one is configured."""
+
+    configured = get_settings().trading_lab_api_token
+    if configured is None:
+        return
+    supplied = credentials.credentials if credentials is not None else ""
+    if not compare_digest(supplied, configured.get_secret_value()):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="dashboard authentication required",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+
 def create_app() -> FastAPI:
     application = FastAPI(
         title="Private Trading Laboratory",
@@ -30,7 +54,9 @@ def create_app() -> FastAPI:
     def health() -> dict[str, str]:
         return {"status": "ok", "execution": "simulation-only"}
 
-    @application.get("/system/health")
+    protected = [Depends(require_dashboard_token)]
+
+    @application.get("/system/health", dependencies=protected)
     def system_health() -> dict[str, object]:
         return {
             "status": "ok",
@@ -42,7 +68,7 @@ def create_app() -> FastAPI:
             "dataset": "synthetic-v2:seed-1729:2022-2024",
         }
 
-    @application.get("/safety")
+    @application.get("/safety", dependencies=protected)
     def safety() -> dict[str, object]:
         return {
             "supported_modes": [mode.value for mode in TradingMode],
@@ -50,11 +76,11 @@ def create_app() -> FastAPI:
             "broker_credentials_required": False,
         }
 
-    @application.get("/portfolio")
+    @application.get("/portfolio", dependencies=protected)
     def portfolio() -> dict[str, object]:
         return service.portfolio_summary()
 
-    @application.get("/strategies")
+    @application.get("/strategies", dependencies=protected)
     def strategies() -> dict[str, object]:
         return {
             "summary": service.strategy_summary(),
@@ -83,7 +109,7 @@ def create_app() -> FastAPI:
             ],
         }
 
-    @application.get("/strategies/{version_key}")
+    @application.get("/strategies/{version_key}", dependencies=protected)
     def strategy_detail(version_key: str) -> dict[str, object]:
         result = service.result_for(version_key)
         if result is None:
@@ -99,7 +125,7 @@ def create_app() -> FastAPI:
             "validation": {"state": service.scores[version_key].state},
         }
 
-    @application.get("/backtests")
+    @application.get("/backtests", dependencies=protected)
     def backtests() -> dict[str, object]:
         return {
             "items": [
@@ -119,7 +145,7 @@ def create_app() -> FastAPI:
             ]
         }
 
-    @application.post("/backtests/run")
+    @application.post("/backtests/run", dependencies=protected)
     def run_backtest(request: BacktestRunRequest) -> dict[str, object]:
         result = service.run_reference_backtest(
             request.strategy_version,
@@ -129,7 +155,7 @@ def create_app() -> FastAPI:
             raise HTTPException(status_code=404, detail="strategy version not found")
         return backtest_payload(result)
 
-    @application.get("/research/experiments")
+    @application.get("/research/experiments", dependencies=protected)
     def experiments() -> dict[str, object]:
         return {
             "items": [
