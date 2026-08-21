@@ -41,8 +41,19 @@ class PaperAccount(BaseModel):
     starting_cash: float
     cash: float
     positions: dict[str, PaperPosition] = Field(default_factory=dict)
+    market_value: float = 0.0
+    equity: float = 0.0
     realised_pnl: float = 0.0
+    unrealised_pnl: float = 0.0
+    total_pnl: float = 0.0
     fees_paid: float = 0.0
+
+
+class PaperPortfolioSnapshot(BaseModel):
+    model_config = ConfigDict(frozen=True)
+
+    timestamp: datetime
+    account: PaperAccount
 
 
 class PaperTradingEngine:
@@ -66,24 +77,58 @@ class PaperTradingEngine:
         self._fees_paid = 0.0
         self._positions: dict[str, PaperPosition] = {}
         self._orders: dict[str, SimulatedOrder] = {}
+        self._order_history: list[SimulatedOrder] = []
         self._fills: list[SimulatedFill] = []
+        self._latest_prices: dict[str, float] = {}
+        self._portfolio_history: list[PaperPortfolioSnapshot] = []
         self._risk = risk_engine
         self._audit = audit_sink
         self._execution = ExecutionModel(costs or CostAssumptions())
 
     @property
     def account(self) -> PaperAccount:
+        market_value = sum(
+            position.quantity
+            * self._latest_prices.get(position.asset.symbol, position.average_price)
+            for position in self._positions.values()
+        )
+        unrealised_pnl = sum(
+            position.quantity
+            * (
+                self._latest_prices.get(position.asset.symbol, position.average_price)
+                - position.average_price
+            )
+            - position.entry_fees
+            for position in self._positions.values()
+        )
+        equity = self._cash + market_value
         return PaperAccount(
             starting_cash=self._starting_cash,
             cash=self._cash,
             positions=dict(self._positions),
+            market_value=market_value,
+            equity=equity,
             realised_pnl=self._realised_pnl,
+            unrealised_pnl=unrealised_pnl,
+            total_pnl=equity - self._starting_cash,
             fees_paid=self._fees_paid,
         )
 
     @property
+    def orders(self) -> tuple[SimulatedOrder, ...]:
+        return tuple(self._order_history)
+
+    @property
+    def pending_orders(self) -> tuple[SimulatedOrder, ...]:
+        return tuple(self._orders.values())
+
+    @property
     def fills(self) -> tuple[SimulatedFill, ...]:
         return tuple(self._fills)
+
+    @property
+    def portfolio_history(self) -> tuple[PaperPortfolioSnapshot, ...]:
+        return tuple(self._portfolio_history)
 
     def create_simulated_order(
         self,
@@ -125,12 +170,14 @@ class PaperTradingEngine:
             limit_price=limit_price,
         )
         self._orders[order_id] = order
+        self._order_history.append(order)
         self._audit.record(
             "SIMULATED_ORDER_CREATED", order.model_dump(mode="json"), datetime.now(UTC)
         )
         return order
 
     def process_bar(self, bar: MarketBar) -> tuple[SimulatedFill, ...]:
+        self._latest_prices[bar.asset.symbol] = bar.effective_close
         new_fills: list[SimulatedFill] = []
         for order_id, order in tuple(self._orders.items()):
             if order.asset != bar.asset:
@@ -191,7 +238,7 @@ class PaperTradingEngine:
             new_fills.append(fill)
             self._audit.record("SIMULATED_FILL", fill.model_dump(mode="json"), bar.timestamp)
             del self._orders[order_id]
-        self._audit.record(
-            "PORTFOLIO_SNAPSHOT", self.account.model_dump(mode="json"), bar.timestamp
-        )
+        snapshot = PaperPortfolioSnapshot(timestamp=bar.timestamp, account=self.account)
+        self._portfolio_history.append(snapshot)
+        self._audit.record("PORTFOLIO_SNAPSHOT", snapshot.model_dump(mode="json"), bar.timestamp)
         return tuple(new_fills)

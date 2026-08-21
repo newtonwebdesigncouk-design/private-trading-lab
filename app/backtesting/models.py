@@ -51,6 +51,8 @@ class SimulatedFill(BaseModel):
     model_config = ConfigDict(frozen=True)
 
     order_id: str
+    strategy_version: str
+    asset: Asset
     timestamp: datetime
     side: OrderSide
     quantity: float

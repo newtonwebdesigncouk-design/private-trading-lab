@@ -119,7 +119,15 @@ def test_paper_engine_records_orders_fills_positions_and_audit(equity: Asset) ->
     )
     buy_fills = paper.process_bar(bars[1])
     assert len(buy_fills) == 1
+    assert buy_fills[0].strategy_version == "test:v1"
+    assert buy_fills[0].asset == equity
     assert paper.account.positions[equity.symbol].quantity == 10
+    assert paper.account.equity == pytest.approx(paper.account.cash + paper.account.market_value)
+    assert paper.account.total_pnl == pytest.approx(paper.account.equity - 10_000)
+    assert len(paper.orders) == 1
+    assert paper.pending_orders == ()
+    assert len(paper.portfolio_history) == 1
+    assert paper.portfolio_history[0].timestamp == bars[1].timestamp
 
     paper.create_simulated_order(
         order_id="sell-1",
@@ -136,6 +144,10 @@ def test_paper_engine_records_orders_fills_positions_and_audit(equity: Asset) ->
     assert len(sell_fills) == 1
     assert equity.symbol not in paper.account.positions
     assert paper.account.realised_pnl > 0
+    assert paper.account.unrealised_pnl == 0
+    assert len(paper.orders) == 2
+    assert len(paper.fills) == 2
+    assert len(paper.portfolio_history) == 2
     event_types = [event["event_type"] for event in audit.events]
     assert event_types.count("SIMULATED_ORDER_CREATED") == 2
     assert event_types.count("SIMULATED_FILL") == 2

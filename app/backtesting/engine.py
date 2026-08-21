@@ -58,6 +58,8 @@ class ExecutionModel:
         notional = order.quantity * fill_price
         return SimulatedFill(
             order_id=order.order_id,
+            strategy_version=order.strategy_version,
+            asset=order.asset,
             timestamp=bar.timestamp,
             side=order.side,
             quantity=order.quantity,

@@ -21,8 +21,10 @@ persistence models stay behind a SQLAlchemy repository boundary.
   regime labels.
 - `app/scoring.py`: 0-100 weighted, risk-first score and lifecycle recommendation.
 - `app/risk`: independent immutable limits and a global simulation kill-switch input.
-- `app/paper_trading`: local simulated orders/fills and append-only audit events.
-- `app/research`: bounded approved-parameter variations represented as structured specifications.
+- `app/paper_trading`: local simulated orders/fills, marked-to-market portfolio history, strategy
+  attribution, and append-only audit events.
+- `app/research`: bounded approved-parameter variations represented as structured specifications,
+  with deterministic backtest/score/reject/retain evaluation and reproducible experiment records.
 - `app/database`: SQLite/PostgreSQL-ready experiment, result, strategy, and audit persistence.
 - `app/api`: local FastAPI read endpoints for portfolio, strategies, details, and research outcomes.
 

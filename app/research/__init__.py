@@ -1,5 +1,17 @@
 """Bounded, configuration-only strategy experimentation."""
 
-from app.research.engine import BoundedResearchEngine, CandidateReason
+from app.research.engine import (
+    ApprovedStrategyVariation,
+    BoundedResearchEngine,
+    CandidateEvaluation,
+    CandidateReason,
+    ResearchBatchResult,
+)
 
-__all__ = ["BoundedResearchEngine", "CandidateReason"]
+__all__ = [
+    "ApprovedStrategyVariation",
+    "BoundedResearchEngine",
+    "CandidateEvaluation",
+    "CandidateReason",
+    "ResearchBatchResult",
+]

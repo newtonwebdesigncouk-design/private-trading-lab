@@ -7,7 +7,8 @@ import pytest
 from app.backtesting import BacktestConfig, BacktestEngine
 from app.data.synthetic import SyntheticMarketDataProvider
 from app.models.enums import AssetClass
-from app.research import BoundedResearchEngine
+from app.models.strategy import IndicatorSpec
+from app.research import ApprovedStrategyVariation, BoundedResearchEngine
 from app.scoring import score_strategy
 from app.strategies.reference import reference_strategies
 from app.validation.regimes import classify_regimes
@@ -83,6 +84,119 @@ def test_bounded_research_generates_only_structured_approved_variations() -> Non
         assert candidate.strategy_id != parent.strategy_id
     with pytest.raises(ValueError, match="not approved"):
         research.generate_candidates(parent, {"unapproved": (1,)})
+
+    approved = research.generate_approved_variations(
+        parent,
+        (
+            ApprovedStrategyVariation(
+                parameter_changes={"fast_window": 18},
+                indicators=(
+                    IndicatorSpec(name="simple_moving_average", parameters={"window": 18}),
+                    IndicatorSpec(name="simple_moving_average", parameters={"window": 60}),
+                ),
+                reason="Approved fast-window and indicator variation",
+            ),
+        ),
+        approved_indicator_names=frozenset({"simple_moving_average"}),
+    )
+    candidate, reason = approved[0]
+    assert candidate.parameters["fast_window"] == 18
+    assert candidate.indicators[0].parameters["window"] == 18
+    assert reason.indicator_names == (
+        "simple_moving_average",
+        "simple_moving_average",
+    )
+
+    with pytest.raises(ValueError, match="approved catalogue"):
+        research.generate_approved_variations(
+            parent,
+            (
+                ApprovedStrategyVariation(
+                    parameter_changes={},
+                    indicators=(IndicatorSpec(name="unapproved_indicator"),),
+                    reason="Must be rejected",
+                ),
+            ),
+            approved_indicator_names=frozenset({"simple_moving_average"}),
+        )
+
+
+def test_bounded_research_backtests_records_rejects_and_retains_candidates() -> None:
+    asset, untyped_bars = equity_data()
+    parent = reference_strategies(asset.symbol)[0].spec  # type: ignore[union-attr]
+    research = BoundedResearchEngine(maximum_candidates=2)
+    engine = BacktestEngine(BacktestConfig(position_fraction=0.2))
+    retained = research.evaluate_candidates(
+        parent,
+        {"fast_window": (18, 22)},
+        untyped_bars,  # type: ignore[arg-type]
+        dataset_id="research-dataset-v1",
+        backtest_engine=engine,
+        code_version="test-commit",
+        random_seed=99,
+        retention_score=0,
+    )
+    assert len(retained.evaluations) == 2
+    assert retained.retained
+    for evaluation in retained.evaluations:
+        assert evaluation.candidate.parent_strategy == parent.version_key
+        assert evaluation.backtest.dataset_id.startswith("research-dataset-v1:")
+        assert evaluation.experiment.strategy_version == evaluation.candidate.version_key
+        assert evaluation.experiment.code_version == "test-commit"
+        assert evaluation.experiment.random_seed == 99
+        assert evaluation.experiment.rejection_reason is None
+
+    rejected = research.evaluate_candidates(
+        parent,
+        {"fast_window": (18, 22)},
+        untyped_bars,  # type: ignore[arg-type]
+        dataset_id="research-dataset-v1",
+        backtest_engine=engine,
+        code_version="test-commit",
+        random_seed=99,
+        retention_score=100,
+    )
+    assert not rejected.retained
+    assert len(rejected.rejected) == 2
+    assert all(item.experiment.rejection_reason for item in rejected.rejected)
+
+    approved_batch = research.evaluate_approved_variations(
+        parent,
+        (
+            ApprovedStrategyVariation(
+                parameter_changes={"fast_window": 18},
+                indicators=(
+                    IndicatorSpec(name="simple_moving_average", parameters={"window": 18}),
+                    IndicatorSpec(name="simple_moving_average", parameters={"window": 60}),
+                ),
+                reason="Owner-approved aligned indicator variation",
+            ),
+        ),
+        untyped_bars,  # type: ignore[arg-type]
+        approved_indicator_names=frozenset({"simple_moving_average"}),
+        dataset_id="research-indicator-dataset-v1",
+        backtest_engine=engine,
+        code_version="test-commit",
+        random_seed=99,
+        retention_score=0,
+    )
+    assert len(approved_batch.evaluations) == 1
+    assert approved_batch.evaluations[0].creation.indicator_names
+    assert approved_batch.evaluations[0].experiment.dataset_version.startswith(
+        "research-indicator-dataset-v1:"
+    )
+
+    with pytest.raises(ValueError, match="retention_score"):
+        research.evaluate_candidates(
+            parent,
+            {"fast_window": (18,)},
+            untyped_bars,  # type: ignore[arg-type]
+            dataset_id="research-dataset-v1",
+            backtest_engine=engine,
+            code_version="test-commit",
+            random_seed=99,
+            retention_score=101,
+        )
 
 
 def test_regime_labels_cover_trend_and_volatility() -> None:
