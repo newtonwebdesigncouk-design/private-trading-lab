@@ -22,6 +22,12 @@ class ExperimentRecord(BaseModel):
     metrics: dict[str, Any]
     validation_result: str
     rejection_reason: str | None = None
+    universe_version: str | None = None
+    regime: str | None = None
+    lifecycle_state: str | None = None
+    score: float | None = None
+    benchmark_outcome: str | None = None
+    candidate_count: int = Field(default=1, ge=1)
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
     @field_validator("period_start", "period_end", "created_at")

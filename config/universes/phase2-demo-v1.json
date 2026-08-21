@@ -1,0 +1,42 @@
+{
+  "instruments": [
+    {
+      "asset": {
+        "asset_class": "ETF",
+        "currency": "USD",
+        "exchange": "YAHOO",
+        "symbol": "SPY"
+      },
+      "benchmark_symbol": "SPY",
+      "category": "broad-market ETF proxy",
+      "inclusion_reason": "owner-configured liquid research instrument"
+    },
+    {
+      "asset": {
+        "asset_class": "ETF",
+        "currency": "USD",
+        "exchange": "YAHOO",
+        "symbol": "QQQ"
+      },
+      "benchmark_symbol": "QQQ",
+      "category": "growth ETF proxy",
+      "inclusion_reason": "owner-configured liquid research instrument"
+    },
+    {
+      "asset": {
+        "asset_class": "CRYPTOCURRENCY",
+        "currency": "USD",
+        "exchange": "YAHOO",
+        "symbol": "BTCUSD"
+      },
+      "benchmark_symbol": "BTCUSD",
+      "category": "cryptocurrency research proxy",
+      "inclusion_reason": "cross-asset generalisation research only"
+    }
+  ],
+  "provider": "yahoo-chart-read-only",
+  "quote_currency": "USD",
+  "survivorship_note": "Explicit owner-configured instruments; historical constituent membership is not reconstructed and no instrument is a recommendation.",
+  "universe_id": "phase2-demo",
+  "version": 1
+}

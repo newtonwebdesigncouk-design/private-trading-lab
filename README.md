@@ -1,25 +1,31 @@
 # Private Trading Laboratory
 
-A private, single-user research system for testing whether systematic strategies show robust,
-risk-adjusted performance after realistic costs. Version 1 is simulation-only: it has no live
-execution mode, external order transmitter, broker credential fields, leverage, margin, options,
-futures, short selling, or money-movement API.
+A private, single-user laboratory for testing whether systematic strategies exhibit robust,
+risk-adjusted performance after realistic costs. Phase 2 adds genuine provider-backed historical
+data, immutable datasets, multi-asset portfolios, bounded research batches, and persistent paper
+simulation. It remains simulation-only: no live execution mode, order transmitter, broker or
+exchange SDK, credential field, funding path, leverage, margin, derivatives, or short selling
+exists.
 
-Reference strategies are engineering fixtures, not investment recommendations. Synthetic results
-do not predict real-market performance.
+Reference strategies are engineering fixtures, not investment recommendations. Historical,
+backtest, and paper results do not guarantee future profitability.
 
 ## Safety boundary
 
 - `TradingMode` is a closed enum containing only `BACKTEST` and `PAPER`.
-- Strategies request exposure; the independent Risk Engine permits or rejects it.
-- The paper broker only fills locally against caller-supplied bars and writes an audit trail.
-- No production dependency is an exchange/broker SDK or an outbound HTTP client.
-- `scripts/check_no_live_execution.py` rejects suspicious external-execution callables, credential
-  settings, network clients in runtime code, or unsafe states.
-- CI and unit tests prove an unsupported mode cannot be configured.
+- Approved provider modules make unauthenticated HTTP `GET` requests for historical market data
+  only. Provider capabilities explicitly declare that account, order, and streaming operations are
+  unsupported.
+- Strategies request exposure; the immutable, independent Risk Engine permits or rejects it.
+- The paper broker fills locally against snapshotted/replayed bars and persists every decision.
+- No production dependency is a broker/exchange SDK and no API endpoint submits an order.
+- `scripts/check_no_live_execution.py` rejects execution/funding surfaces, credential settings,
+  trading SDKs, unsafe modes, non-GET provider requests, or networking outside approved data
+  modules.
 
-See [AGENTS.md](AGENTS.md), [docs/PHASE1_SPEC.md](docs/PHASE1_SPEC.md),
-[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), and [docs/RISK_MODEL.md](docs/RISK_MODEL.md).
+See [AGENTS.md](AGENTS.md), [docs/PHASE2_SPEC.md](docs/PHASE2_SPEC.md),
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md),
+and [docs/RISK_MODEL.md](docs/RISK_MODEL.md).
 
 ## Quick start
 
@@ -34,69 +40,89 @@ pytest
 python -m scripts.run_backtest
 ```
 
-The backtest command uses a fixed seed and time range. It prints a ranked report and writes the
-machine-readable result to `reports/backtest_report.json`. Parameters are exercised on a
-chronological training/development segment, nearby-parameter stability is measured on a separate
-validation segment, and the displayed ranking uses the final held-out test segment.
+## Phase 2 genuine-data workflow
 
-Run the local API:
+The checked-in example universe contains SPY, QQQ, and BTC-USD. Yahoo Chart is the demonstration
+source; it is public, credential-free, and read-only. Network access occurs only during ingestion.
+Every later command operates on the frozen dataset identifier.
+
+```bash
+python -m scripts.ingest_market_data --config config/phase2_demo.json
+python -m scripts.list_datasets --snapshot-root data/snapshots
+python -m scripts.validate_dataset --dataset phase2-yahoo-demo-049a182908354067
+python -m scripts.run_portfolio_backtest --dataset phase2-yahoo-demo-049a182908354067 --universe phase2-demo-v1
+python -m scripts.run_research --dataset phase2-yahoo-demo-049a182908354067 --universe phase2-demo-v1
+python -m scripts.run_phase2_demo --dataset phase2-yahoo-demo-049a182908354067 --universe phase2-demo-v1
+```
+
+The demo writes `reports/phase2_demo_report.json`; the checked-in findings are summarized in
+[docs/PHASE2_DEMO_RESULTS.md](docs/PHASE2_DEMO_RESULTS.md). The snapshot ID is content-derived, so
+a provider revision may legitimately produce a new ID. Use the ID printed by ingestion in that
+case.
+
+Persistent paper simulation is an explicit, local cycle:
+
+```bash
+python -m scripts.run_paper_cycle --account phase2-demo --dataset phase2-yahoo-demo-049a182908354067
+```
+
+The cycle is restart-safe and idempotent for its account/dataset/timestamp identity. It loads only
+frozen bars, checks freshness and the kill switch, restores pending simulated orders, records local
+fills, and commits the account snapshot and audit trail atomically. Re-running the same completed
+cycle performs no duplicate work.
+
+## Local read API
 
 ```bash
 uvicorn app.api.main:app --reload
 ```
 
-Useful endpoints include `/safety`, `/portfolio`, `/strategies`,
-`/strategies/{strategy_id}:v{version}`, and `/research/experiments`. Interactive API documentation
-is at `/docs`.
+Alongside the Phase 1 strategy endpoints, Phase 2 exposes GET-only read models under `/data`,
+`/research`, `/portfolio`, and `/paper`. Interactive documentation is at `/docs`. The API has no
+action endpoint.
 
-## Quality checks
+## Quality and safety gates
 
 ```bash
 ruff format --check .
 ruff check .
 mypy app scripts
 python -m scripts.check_no_live_execution
-pytest --cov=app --cov-report=term-missing
+pytest --cov=app --cov-report=term-missing --cov-fail-under=80
+python -m pip check
 pip-audit
 ```
 
 ## Architecture at a glance
 
 ```text
-synthetic/cached market data
-          |
-          v
-immutable strategy spec -> desired exposure
-          |                    |
-          |                    v
-          |             independent risk engine
-          v
-next-bar backtester -> analytics -> benchmark -> validation -> 0-100 risk-first score
-          |
-          +-> reproducible experiment records
+approved GET-only provider -> normalize/validate -> immutable checksummed snapshot
+                                                        |
+             versioned universe + strategy specs -------+
+                              |                          |
+                              v                          v
+                    bounded research            multi-asset portfolio
+                    train -> validation          allocator -> risk -> next bar
+                    -> locked holdout                    |
+                              |                          v
+                              +--> benchmark/regime/attribution reports
 
-paper mode: supplied market bar -> risk decision -> local simulated fill -> audit record
+frozen snapshot -> idempotent paper cycle -> local simulated orders/fills -> SQL audit
 ```
 
-Persistence uses SQLAlchemy 2 and Alembic. SQLite is the local default; the schema and session
-boundary are PostgreSQL-ready. Historical synthetic responses can be cached as transparent JSON.
+SQLAlchemy 2 and Alembic back persistence. SQLite is the local default; the schema and transaction
+boundaries remain PostgreSQL-ready.
 
-## Reproducibility
+## Reproducibility and limitations
 
-Every experiment model records the immutable strategy version, dataset version, instruments,
-period, costs, parameters, code revision, random seed, metrics, validation outcome, and rejection
-reason. Strategy changes create a new version or a traceable child candidate.
+Dataset manifests record provider/configuration, requested and actual ranges, canonical schema,
+timezone and adjustment policies, per-file SHA-256 checksums, normalization diagnostics, ingestion
+time, and code revision. Research records add the universe version, candidate-space size, seed,
+chronological split, costs, benchmarks, regimes, scores, lifecycle outcome, and rejection reasons.
 
-## Current limitations
-
-- One asset per backtest and long-only cash positions.
-- Daily synthetic market data is the only included provider.
-- Market orders drive reference backtests; limit fill mechanics are available for focused tests and
-  paper simulation.
-- Corporate actions are limited to explicit cash dividends on canonical bars.
-- Risk-free rate and tax effects are zero/not modelled.
-- The API is a local read model, not a styled dashboard.
-- Paper mode consumes supplied/replayed bars; it does not connect to an exchange feed.
-
-These are intentional Phase 1 constraints. They do not relax the prohibition on real-money
-trading.
+Owner-configured universes avoid hidden selection logic but have survivorship bias: the Phase 2
+example uses instruments known at configuration time and is not a point-in-time constituent
+history. Yahoo adjusted OHLC embeds splits and distributions; action events are retained as
+provenance and are not applied again. Daily exchange calendars are conservative and do not yet
+model every irregular closure. There is no FX conversion, tax model, volume participation, partial
+fill model, intraday feed, or live broker integration.

@@ -1,5 +1,6 @@
 """Local-only paper broker with a complete audit trail."""
 
+from collections.abc import Sequence
 from datetime import UTC, datetime
 from typing import Any, Protocol
 
@@ -68,16 +69,20 @@ class PaperTradingEngine:
         risk_engine: RiskEngine,
         audit_sink: AuditSink,
         costs: CostAssumptions | None = None,
+        account_state: PaperAccount | None = None,
+        pending_orders: Sequence[SimulatedOrder] = (),
     ) -> None:
         if starting_cash <= 0:
             raise ValueError("starting_cash must be positive")
-        self._cash = starting_cash
+        if account_state is not None and account_state.starting_cash != starting_cash:
+            raise ValueError("restored account starting cash differs from engine configuration")
+        self._cash = account_state.cash if account_state is not None else starting_cash
         self._starting_cash = starting_cash
-        self._realised_pnl = 0.0
-        self._fees_paid = 0.0
-        self._positions: dict[str, PaperPosition] = {}
-        self._orders: dict[str, SimulatedOrder] = {}
-        self._order_history: list[SimulatedOrder] = []
+        self._realised_pnl = account_state.realised_pnl if account_state is not None else 0.0
+        self._fees_paid = account_state.fees_paid if account_state is not None else 0.0
+        self._positions = dict(account_state.positions) if account_state is not None else {}
+        self._orders = {order.order_id: order for order in pending_orders}
+        self._order_history = list(pending_orders)
         self._fills: list[SimulatedFill] = []
         self._latest_prices: dict[str, float] = {}
         self._portfolio_history: list[PaperPortfolioSnapshot] = []
@@ -144,6 +149,10 @@ class PaperTradingEngine:
         risk_context: RiskContext,
         limit_price: float | None = None,
     ) -> SimulatedOrder:
+        if order_id in self._orders or any(
+            order.order_id == order_id for order in self._order_history
+        ):
+            raise ValueError(f"duplicate simulated order ID: {order_id}")
         decision = self._risk.evaluate(
             symbol=asset.symbol,
             asset_class=asset.asset_class,

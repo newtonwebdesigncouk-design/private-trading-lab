@@ -9,6 +9,7 @@ from typing import ClassVar
 import numpy as np
 
 from app.data.cache import HistoricalDataCache
+from app.data.models import ProviderCapabilities, ProviderMetadata
 from app.data.provider import MarketDataProvider
 from app.models.enums import AssetClass
 from app.models.market import Asset, MarketBar
@@ -32,6 +33,19 @@ class SyntheticMarketDataProvider(MarketDataProvider):
     def __init__(self, seed: int = 1729, cache_dir: Path | None = None) -> None:
         self.seed = seed
         self.cache = HistoricalDataCache(cache_dir) if cache_dir is not None else None
+
+    def provider_metadata(self) -> ProviderMetadata:
+        return ProviderMetadata(
+            name=self.name,
+            source_url="local://deterministic-synthetic-generator",
+            version="2",
+            capabilities=ProviderCapabilities(
+                asset_classes=frozenset(AssetClass),
+                intervals=("1d",),
+                corporate_actions=True,
+            ),
+            configuration={"seed": self.seed},
+        )
 
     def supported_assets(self) -> tuple[Asset, ...]:
         return DEFAULT_ASSETS
