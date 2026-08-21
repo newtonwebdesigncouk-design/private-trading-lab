@@ -1,0 +1,4089 @@
+{
+  "code_revision": "2ac0ba3108f244929fcb7c8f967be4f7dd6e96df",
+  "current_data_provider": {
+    "credentials_required": false,
+    "enabled_by_default": false,
+    "fail_closed_on_stale_partial_gap_or_future_data": true,
+    "production_adapter": "YahooReadOnlyProvider",
+    "transport_method": "GET"
+  },
+  "cycles": {
+    "blocked": 0,
+    "completed": 32,
+    "failed": 0,
+    "last_ten": [
+      {
+        "completed_at": "2026-08-21T03:45:16.094838Z",
+        "cycle_id": "forward-cycle-39f0f443cf69e2c9e2197ba8",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-5319ae5f4664df284fde",
+        "market_timestamp": "2024-12-23T00:00:00Z",
+        "payload": {
+          "equity": 298961.02717950265,
+          "fills": 0,
+          "observations": 1,
+          "orders": 0,
+          "signals": 1
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:15.937294Z",
+        "status": "COMPLETED"
+      },
+      {
+        "completed_at": "2026-08-21T03:45:16.378188Z",
+        "cycle_id": "forward-cycle-f55accbc1572772e11273660",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-965a9d1db019069ad04c",
+        "market_timestamp": "2024-12-24T00:00:00Z",
+        "payload": {
+          "equity": 299023.41795784753,
+          "fills": 1,
+          "observations": 3,
+          "orders": 0,
+          "signals": 3
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:16.228065Z",
+        "status": "COMPLETED"
+      },
+      {
+        "completed_at": "2026-08-21T03:45:16.694872Z",
+        "cycle_id": "forward-cycle-254401fc7a4a1afc843869bb",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-f588ccd49d4bd857f367",
+        "market_timestamp": "2024-12-25T00:00:00Z",
+        "payload": {
+          "equity": 301706.03840445535,
+          "fills": 0,
+          "observations": 3,
+          "orders": 0,
+          "signals": 3
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:16.536120Z",
+        "status": "COMPLETED"
+      },
+      {
+        "completed_at": "2026-08-21T03:45:17.011666Z",
+        "cycle_id": "forward-cycle-85ed29a743bc8817a33f9406",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-dcdf7f3b413659dbe894",
+        "market_timestamp": "2024-12-26T00:00:00Z",
+        "payload": {
+          "equity": 302037.27585528686,
+          "fills": 0,
+          "observations": 1,
+          "orders": 0,
+          "signals": 1
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:16.853056Z",
+        "status": "COMPLETED"
+      },
+      {
+        "completed_at": "2026-08-21T03:45:17.320030Z",
+        "cycle_id": "forward-cycle-8bd4a0cd76cee74dab704b1b",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-31665abb7d54047864e5",
+        "market_timestamp": "2024-12-27T00:00:00Z",
+        "payload": {
+          "equity": 300178.140773569,
+          "fills": 0,
+          "observations": 3,
+          "orders": 0,
+          "signals": 3
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:17.161419Z",
+        "status": "COMPLETED"
+      },
+      {
+        "completed_at": "2026-08-21T03:45:17.685451Z",
+        "cycle_id": "forward-cycle-512bf31f368e0cbd3d23f063",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-0426de6dd2cb00686844",
+        "market_timestamp": "2024-12-28T00:00:00Z",
+        "payload": {
+          "equity": 298773.45063487894,
+          "fills": 0,
+          "observations": 3,
+          "orders": 1,
+          "signals": 3
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:17.527032Z",
+        "status": "COMPLETED"
+      },
+      {
+        "completed_at": "2026-08-21T03:45:18.045075Z",
+        "cycle_id": "forward-cycle-40284fb54f25209979f1b59d",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-517597f3fd3db818a41e",
+        "market_timestamp": "2024-12-29T00:00:00Z",
+        "payload": {
+          "equity": 298733.18130898976,
+          "fills": 1,
+          "observations": 1,
+          "orders": 0,
+          "signals": 1
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:17.895087Z",
+        "status": "COMPLETED"
+      },
+      {
+        "completed_at": "2026-08-21T03:45:18.394725Z",
+        "cycle_id": "forward-cycle-ad93885e6b8a8dcaf847c07d",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-d134c154739811f4cc13",
+        "market_timestamp": "2024-12-30T00:00:00Z",
+        "payload": {
+          "equity": 298733.18130898976,
+          "fills": 0,
+          "observations": 1,
+          "orders": 0,
+          "signals": 1
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:18.243141Z",
+        "status": "COMPLETED"
+      },
+      {
+        "completed_at": "2026-08-21T03:45:18.756847Z",
+        "cycle_id": "forward-cycle-85e93de6081ca0b0acf774fd",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-c9da1dfae2ba44e343e8",
+        "market_timestamp": "2024-12-31T00:00:00Z",
+        "payload": {
+          "equity": 298156.24230709986,
+          "fills": 0,
+          "observations": 3,
+          "orders": 1,
+          "signals": 3
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:18.601978Z",
+        "status": "COMPLETED"
+      },
+      {
+        "completed_at": "2026-08-21T03:45:19.170346Z",
+        "cycle_id": "forward-cycle-5b83e0ffbb6753f8398b5fcc",
+        "error": null,
+        "evidence_manifest_id": "forward-evidence-555d65820d94a3deb9bb",
+        "market_timestamp": "2025-01-01T00:00:00Z",
+        "payload": {
+          "equity": 298361.12737714505,
+          "fills": 1,
+          "observations": 3,
+          "orders": 1,
+          "signals": 3
+        },
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "retry_count": 0,
+        "started_at": "2026-08-21T03:45:18.993492Z",
+        "status": "COMPLETED"
+      }
+    ]
+  },
+  "data_quality": {
+    "items": [],
+    "unresolved": 0
+  },
+  "generated_at": "2026-08-21T03:45:19.244125Z",
+  "genuine_forward_trials_started": 0,
+  "health": {
+    "data_age_seconds": 51594319.25425,
+    "data_quality": {
+      "events": 0,
+      "unresolved": 0
+    },
+    "database": "reachable",
+    "external_order_transmission": false,
+    "kill_switch_engaged": false,
+    "last_cycle": {
+      "completed_at": "2026-08-21T03:45:19.170346Z",
+      "cycle_id": "forward-cycle-5b83e0ffbb6753f8398b5fcc",
+      "error": null,
+      "evidence_manifest_id": "forward-evidence-555d65820d94a3deb9bb",
+      "market_timestamp": "2025-01-01T00:00:00Z",
+      "payload": {
+        "equity": 298361.12737714505,
+        "fills": 1,
+        "observations": 3,
+        "orders": 1,
+        "signals": 3
+      },
+      "portfolio_id": "phase3-replay-7e23dd823599693e",
+      "provenance": "REPLAY",
+      "retry_count": 0,
+      "started_at": "2026-08-21T03:45:18.993492Z",
+      "status": "COMPLETED"
+    },
+    "latest_observation_at": "2025-01-01T00:00:00Z",
+    "latest_successful_cycle": {
+      "completed_at": "2026-08-21T03:45:19.170346Z",
+      "cycle_id": "forward-cycle-5b83e0ffbb6753f8398b5fcc",
+      "error": null,
+      "evidence_manifest_id": "forward-evidence-555d65820d94a3deb9bb",
+      "market_timestamp": "2025-01-01T00:00:00Z",
+      "payload": {
+        "equity": 298361.12737714505,
+        "fills": 1,
+        "observations": 3,
+        "orders": 1,
+        "signals": 3
+      },
+      "portfolio_id": "phase3-replay-7e23dd823599693e",
+      "provenance": "REPLAY",
+      "retry_count": 0,
+      "started_at": "2026-08-21T03:45:18.993492Z",
+      "status": "COMPLETED"
+    },
+    "lease": null,
+    "missing_assets": [],
+    "mode": "PAPER",
+    "provenance_counts": {
+      "REPLAY": 3
+    },
+    "provider": {
+      "credentials_required": false,
+      "name": "immutable-historical-replay",
+      "read_only": true,
+      "version": "phase3-replay-v1"
+    },
+    "qualified_forward_is_paper_only": true,
+    "recent_failed_or_blocked_cycles": 0,
+    "state_counts": {
+      "OBSERVING": 1,
+      "PAUSED_RISK": 2
+    },
+    "status": "ok"
+  },
+  "observation_window": {
+    "end": "2025-01-01T00:00:00Z",
+    "start": "2024-12-01T00:00:00Z"
+  },
+  "performance": {
+    "champion_trial_id": "forward-e17103a978d25f9bcc31",
+    "drawdown_contribution": {
+      "forward-1d1f10ebb8d13f5c8a49": 0.7602778095791021,
+      "forward-9e9bacf7b6e2143688f4": 0.23972219042089793,
+      "forward-e17103a978d25f9bcc31": 0.0
+    },
+    "overlapping_exposure": {
+      "forward-1d1f10ebb8d13f5c8a49|forward-9e9bacf7b6e2143688f4": 0.0,
+      "forward-1d1f10ebb8d13f5c8a49|forward-e17103a978d25f9bcc31": 0.0,
+      "forward-9e9bacf7b6e2143688f4|forward-e17103a978d25f9bcc31": 0.0
+    },
+    "pairwise_return_correlation": {
+      "forward-1d1f10ebb8d13f5c8a49": {
+        "forward-1d1f10ebb8d13f5c8a49": 1.0,
+        "forward-9e9bacf7b6e2143688f4": 0.6225315245666959,
+        "forward-e17103a978d25f9bcc31": 0.43637895110909913
+      },
+      "forward-9e9bacf7b6e2143688f4": {
+        "forward-1d1f10ebb8d13f5c8a49": 0.622531524566696,
+        "forward-9e9bacf7b6e2143688f4": 1.0,
+        "forward-e17103a978d25f9bcc31": 0.3362802001116359
+      },
+      "forward-e17103a978d25f9bcc31": {
+        "forward-1d1f10ebb8d13f5c8a49": 0.43637895110909913,
+        "forward-9e9bacf7b6e2143688f4": 0.33628020011163595,
+        "forward-e17103a978d25f9bcc31": 1.0
+      }
+    },
+    "performance": {
+      "forward-1d1f10ebb8d13f5c8a49": {
+        "annualised_volatility": 0.34792927999931617,
+        "benchmark_return": -0.03131032825862812,
+        "cost_resilience": 0.9227477265891706,
+        "costs": 76.44118424800675,
+        "elapsed_days": 31,
+        "excess_return": 0.014401817357735047,
+        "expectancy": -1299.7783449970607,
+        "hit_rate": 0.0,
+        "maximum_drawdown": 0.10838883386567977,
+        "observations": 32,
+        "regime_mix": {
+          "BEARISH/LOW/LOW_LIQUIDITY": 1,
+          "BULLISH/HIGH/HIGH_LIQUIDITY": 12,
+          "BULLISH/HIGH/LOW_LIQUIDITY": 9,
+          "BULLISH/LOW/HIGH_LIQUIDITY": 2,
+          "BULLISH/LOW/LOW_LIQUIDITY": 4,
+          "SIDEWAYS/LOW/LOW_LIQUIDITY": 4
+        },
+        "sharpe_ratio": -0.22949485444244183,
+        "signal_frequency": 0.90625,
+        "sortino_ratio": -0.32251555960778705,
+        "total_return": -0.01690851090089307,
+        "trades": 1,
+        "trial_id": "forward-1d1f10ebb8d13f5c8a49",
+        "turnover": 2.803690455970776
+      },
+      "forward-9e9bacf7b6e2143688f4": {
+        "annualised_volatility": 0.10784808360887338,
+        "benchmark_return": -0.025806244565718783,
+        "cost_resilience": 0.9527641029460595,
+        "costs": 76.5995357880646,
+        "elapsed_days": 31,
+        "excess_return": -0.002805582829285891,
+        "expectancy": -1098.4299389907533,
+        "hit_rate": 0.0,
+        "maximum_drawdown": 0.03463173085116189,
+        "observations": 21,
+        "regime_mix": {
+          "BULLISH/LOW/LOW_LIQUIDITY": 5,
+          "SIDEWAYS/LOW/HIGH_LIQUIDITY": 9,
+          "SIDEWAYS/LOW/LOW_LIQUIDITY": 7
+        },
+        "sharpe_ratio": -2.134317762085215,
+        "signal_frequency": 0.8571428571428571,
+        "sortino_ratio": -2.4282161935404036,
+        "total_return": -0.028611827395004674,
+        "trades": 1,
+        "trial_id": "forward-9e9bacf7b6e2143688f4",
+        "turnover": 2.8095551298508523
+      },
+      "forward-e17103a978d25f9bcc31": {
+        "annualised_volatility": 0.05367926682285447,
+        "benchmark_return": -0.006279170194072092,
+        "cost_resilience": 0.7964832495324297,
+        "costs": 209.3278688448404,
+        "elapsed_days": 31,
+        "excess_return": 0.021450015474137274,
+        "expectancy": 204.80641128087868,
+        "hit_rate": 0.75,
+        "maximum_drawdown": 0.009835524870687617,
+        "observations": 21,
+        "regime_mix": {
+          "BULLISH/LOW/HIGH_LIQUIDITY": 8,
+          "BULLISH/LOW/LOW_LIQUIDITY": 11,
+          "SIDEWAYS/LOW/HIGH_LIQUIDITY": 1,
+          "SIDEWAYS/LOW/LOW_LIQUIDITY": 1
+        },
+        "sharpe_ratio": 2.306607607233528,
+        "signal_frequency": 0.3333333333333333,
+        "sortino_ratio": 4.932855992680903,
+        "total_return": 0.015170845280065182,
+        "trades": 4,
+        "trial_id": "forward-e17103a978d25f9bcc31",
+        "turnover": 7.678803038109301
+      }
+    },
+    "portfolio_vs_benchmark": {
+      "excess_return": 0.005948325000465592,
+      "frozen_weight_benchmark_return": -0.011411233743315418,
+      "portfolio_return": -0.005462908742849826
+    },
+    "qualification_note": "Ranking is a paper-observation comparison and never authorises live execution.",
+    "ranking": [
+      "forward-e17103a978d25f9bcc31",
+      "forward-1d1f10ebb8d13f5c8a49",
+      "forward-9e9bacf7b6e2143688f4"
+    ],
+    "strategy_attribution": {
+      "forward-1d1f10ebb8d13f5c8a49": -913.0595886482258,
+      "forward-9e9bacf7b6e2143688f4": -1545.0386793302523,
+      "forward-e17103a978d25f9bcc31": 819.2256451235198
+    }
+  },
+  "portfolio": {
+    "external_order_transmission": false,
+    "latest_snapshot": {
+      "asset_class_exposure": {
+        "CRYPTOCURRENCY": 0.16913132728873043,
+        "ETF": 0.16690537614201278
+      },
+      "cash": 198100.83770144914,
+      "cycle_id": "forward-cycle-5b83e0ffbb6753f8398b5fcc",
+      "drawdown": 0.026402555452200716,
+      "equity": 298361.12737714505,
+      "gross_exposure": 0.3360367034307432,
+      "market_value": 100260.2896756959,
+      "portfolio_id": "phase3-replay-7e23dd823599693e",
+      "positions": {
+        "forward-1d1f10ebb8d13f5c8a49|BTCUSD": {
+          "asset": {
+            "asset_class": "CRYPTOCURRENCY",
+            "currency": "USD",
+            "exchange": "YAHOO",
+            "symbol": "BTCUSD"
+          },
+          "average_price": 92694.20378750001,
+          "market_value": 50462.21348465851,
+          "portfolio_weight": 0.16913132728873043,
+          "quantity": 0.5401117830058396,
+          "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+        },
+        "forward-9e9bacf7b6e2143688f4|SPY": {
+          "asset": {
+            "asset_class": "ETF",
+            "currency": "USD",
+            "exchange": "YAHOO",
+            "symbol": "SPY"
+          },
+          "average_price": 581.2638507295073,
+          "market_value": 49798.076191037384,
+          "portfolio_weight": 0.16690537614201278,
+          "quantity": 86.42269425618012,
+          "trial_id": "forward-9e9bacf7b6e2143688f4"
+        }
+      },
+      "provenance": "REPLAY",
+      "timestamp": "2025-01-01T00:00:00Z",
+      "trial_snapshots": [
+        {
+          "allocation": 0.1779284750598456,
+          "cash": 2624.7269266932635,
+          "drawdown": 0.01690851090089307,
+          "equity": 53086.940411351774,
+          "market_value": 50462.21348465851,
+          "realised_pnl": -1299.7783449970607,
+          "timestamp": "2025-01-01T00:00:00Z",
+          "trial_id": "forward-1d1f10ebb8d13f5c8a49",
+          "unrealised_pnl": 386.718756348836
+        },
+        {
+          "allocation": 0.17581030673062098,
+          "cash": 2656.885129632363,
+          "drawdown": 0.028611827395004674,
+          "equity": 52454.96132066975,
+          "market_value": 49798.076191037384,
+          "realised_pnl": -1098.4299389907533,
+          "timestamp": "2025-01-01T00:00:00Z",
+          "trial_id": "forward-9e9bacf7b6e2143688f4",
+          "unrealised_pnl": -446.6087403395032
+        },
+        {
+          "allocation": 0.18373447683025063,
+          "cash": 54819.225645123515,
+          "drawdown": 0.0,
+          "equity": 54819.225645123515,
+          "market_value": 0.0,
+          "realised_pnl": 819.2256451235147,
+          "timestamp": "2025-01-01T00:00:00Z",
+          "trial_id": "forward-e17103a978d25f9bcc31",
+          "unrealised_pnl": 0.0
+        }
+      ]
+    },
+    "mode": "PAPER",
+    "portfolio_id": "phase3-replay-7e23dd823599693e",
+    "snapshot_count": 32,
+    "state": {
+      "last_cycle_id": "forward-cycle-5b83e0ffbb6753f8398b5fcc",
+      "latest_prices": {
+        "BTCUSD": 93429.203125,
+        "QQQ": 507.4521179199219,
+        "SPY": 576.2152709960938
+      },
+      "ledgers": {
+        "forward-1d1f10ebb8d13f5c8a49": {
+          "cash": 2624.7269266932635,
+          "fees_paid": 31.029856924484374,
+          "positions": {
+            "BTCUSD": {
+              "asset": {
+                "asset_class": "CRYPTOCURRENCY",
+                "currency": "USD",
+                "exchange": "YAHOO",
+                "symbol": "BTCUSD"
+              },
+              "average_price": 92694.20378750001,
+              "entry_fees": 10.263046336394655,
+              "entry_timestamp": "2025-01-01T00:00:00Z",
+              "quantity": 0.5401117830058396
+            }
+          },
+          "realised_pnl": -1299.7783449970607,
+          "signal_count": 32,
+          "starting_cash": 54000.0,
+          "trades": [
+            {
+              "asset": "BTCUSD",
+              "entry_price": 96514.38967226564,
+              "entry_timestamp": "2024-12-02T00:00:00Z",
+              "exit_price": 94108.399396875,
+              "exit_timestamp": "2024-12-29T00:00:00Z",
+              "fees": 20.76681058808972,
+              "gross_pnl": -1279.0115344089709,
+              "net_pnl": -1299.7783449970607,
+              "quantity": 0.5315946400495368,
+              "strategy_version": "ma-crossover:v1"
+            }
+          ],
+          "trial_id": "forward-1d1f10ebb8d13f5c8a49",
+          "turnover_notional": 151399.2846224219
+        },
+        "forward-9e9bacf7b6e2143688f4": {
+          "cash": 2656.885129632363,
+          "fees_paid": 31.093195402389206,
+          "positions": {
+            "SPY": {
+              "asset": {
+                "asset_class": "ETF",
+                "currency": "USD",
+                "exchange": "YAHOO",
+                "symbol": "SPY"
+              },
+              "average_price": 581.2638507295073,
+              "entry_fees": 10.296877610753226,
+              "entry_timestamp": "2024-12-24T00:00:00Z",
+              "quantity": 86.42269425618012
+            }
+          },
+          "realised_pnl": -1098.4299389907533,
+          "signal_count": 21,
+          "starting_cash": 54000.0,
+          "trades": [
+            {
+              "asset": "SPY",
+              "entry_price": 591.5692322974609,
+              "entry_timestamp": "2024-12-04T00:00:00Z",
+              "exit_price": 579.1374903642128,
+              "exit_timestamp": "2024-12-20T00:00:00Z",
+              "fees": 20.79631779163598,
+              "gross_pnl": -1077.6336211991172,
+              "net_pnl": -1098.4299389907533,
+              "quantity": 86.68404049773906,
+              "strategy_version": "momentum:v1"
+            }
+          ],
+          "trial_id": "forward-9e9bacf7b6e2143688f4",
+          "turnover_notional": 151715.97701194603
+        },
+        "forward-e17103a978d25f9bcc31": {
+          "cash": 54819.225645123515,
+          "fees_paid": 84.93107281158046,
+          "positions": {},
+          "realised_pnl": 819.2256451235147,
+          "signal_count": 21,
+          "starting_cash": 54000.0,
+          "trades": [
+            {
+              "asset": "QQQ",
+              "entry_price": 509.61081971264133,
+              "entry_timestamp": "2024-12-04T00:00:00Z",
+              "exit_price": 517.4992171556898,
+              "exit_timestamp": "2024-12-07T00:00:00Z",
+              "fees": 21.125042946429694,
+              "gross_pnl": 792.02096270742,
+              "net_pnl": 770.8959197609903,
+              "quantity": 100.40327815954197,
+              "strategy_version": "breakout:v1"
+            },
+            {
+              "asset": "QQQ",
+              "entry_price": 521.112882667098,
+              "entry_timestamp": "2024-12-10T00:00:00Z",
+              "exit_price": 518.6283718948288,
+              "exit_timestamp": "2024-12-11T00:00:00Z",
+              "fees": 21.22664904652043,
+              "gross_pnl": -247.6365278533667,
+              "net_pnl": -268.8631768998871,
+              "quantity": 99.67214898697641,
+              "strategy_version": "breakout:v1"
+            },
+            {
+              "asset": "QQQ",
+              "entry_price": 523.2248858474367,
+              "entry_timestamp": "2024-12-13T00:00:00Z",
+              "exit_price": 525.403270845478,
+              "exit_timestamp": "2024-12-14T00:00:00Z",
+              "fees": 21.166161790848953,
+              "gross_pnl": 214.65596038474487,
+              "net_pnl": 193.48979859389593,
+              "quantity": 98.53903721231534,
+              "strategy_version": "breakout:v1"
+            },
+            {
+              "asset": "QQQ",
+              "entry_price": 528.5793485246471,
+              "entry_timestamp": "2024-12-17T00:00:00Z",
+              "exit_price": 530.0485071588735,
+              "exit_timestamp": "2024-12-19T00:00:00Z",
+              "fees": 21.413219027781388,
+              "gross_pnl": 145.11632269629698,
+              "net_pnl": 123.70310366851558,
+              "quantity": 98.77512156657932,
+              "strategy_version": "breakout:v1"
+            }
+          ],
+          "trial_id": "forward-e17103a978d25f9bcc31",
+          "turnover_notional": 414655.3640579023
+        }
+      },
+      "peak_equity": 306452.249898543,
+      "pending_orders": [
+        {
+          "order": {
+            "asset": {
+              "asset_class": "ETF",
+              "currency": "USD",
+              "exchange": "YAHOO",
+              "symbol": "SPY"
+            },
+            "decision_timestamp": "2025-01-01T00:00:00Z",
+            "limit_price": null,
+            "order_id": "c1d06d7dc83a5fa66b98660b",
+            "order_type": "MARKET",
+            "quantity": 86.42269425618012,
+            "side": "SELL",
+            "strategy_version": "momentum:v1"
+          },
+          "trial_id": "forward-9e9bacf7b6e2143688f4"
+        }
+      ],
+      "period_trades": 1,
+      "period_turnover": 0.1668841056065776,
+      "portfolio_id": "phase3-replay-7e23dd823599693e",
+      "reserve_cash": 138000.0,
+      "risk_period_date": "2025-01-01",
+      "starting_capital": 300000.0
+    }
+  },
+  "provenance": "REPLAY",
+  "replay_verification": {
+    "completed_cycles": 32,
+    "deterministic_seed": 1729,
+    "duplicate_status": "DUPLICATE",
+    "duplicate_was_no_op": true,
+    "evidence_updates": 32,
+    "retry_count": 1,
+    "retry_recovered": true,
+    "same_cycle_engine": true
+  },
+  "report_version": "phase3-replay-v1",
+  "safety": {
+    "external_order_transmission": false,
+    "leverage_or_borrowing": false,
+    "live_money_execution": false,
+    "qualification_is_paper_only": true,
+    "supported_modes": [
+      "BACKTEST",
+      "PAPER"
+    ]
+  },
+  "source_dataset_id": "phase2-yahoo-demo-7e23dd823599693e",
+  "trials": {
+    "count": 3,
+    "items": [
+      {
+        "allocation_weight": 0.18,
+        "benchmark": {
+          "benchmark_id": "BTCUSD-buy-and-hold-v1",
+          "method": "BUY_AND_HOLD",
+          "symbols": [
+            "BTCUSD"
+          ],
+          "version": "v1"
+        },
+        "configuration_fingerprint": "1d1f10ebb8d13f5c8a493017ca7a42b7092ba57d5f8572740fd465e531c64f6c",
+        "fill_count": 3,
+        "latest_observation_at": "2025-01-01T00:00:00Z",
+        "latest_performance": {
+          "annualised_volatility": 0.34792927999931617,
+          "benchmark_return": -0.03131032825862812,
+          "cost_resilience": 0.9227477265891706,
+          "costs": 76.44118424800675,
+          "elapsed_days": 31,
+          "excess_return": 0.014401817357735047,
+          "expectancy": -1299.7783449970607,
+          "hit_rate": 0.0,
+          "maximum_drawdown": 0.10838883386567977,
+          "observations": 32,
+          "regime_mix": {
+            "BEARISH/LOW/LOW_LIQUIDITY": 1,
+            "BULLISH/HIGH/HIGH_LIQUIDITY": 12,
+            "BULLISH/HIGH/LOW_LIQUIDITY": 9,
+            "BULLISH/LOW/HIGH_LIQUIDITY": 2,
+            "BULLISH/LOW/LOW_LIQUIDITY": 4,
+            "SIDEWAYS/LOW/LOW_LIQUIDITY": 4
+          },
+          "sharpe_ratio": -0.22949485444244183,
+          "signal_frequency": 0.90625,
+          "sortino_ratio": -0.32251555960778705,
+          "total_return": -0.01690851090089307,
+          "trades": 1,
+          "trial_id": "forward-1d1f10ebb8d13f5c8a49",
+          "turnover": 2.803690455970776
+        },
+        "lifecycle_history": [
+          {
+            "cycle_id": "forward-cycle-7fe84c7452efb251d11f5aa0",
+            "decision_id": "forward-decision-52439c04eb9ed30db18adc15",
+            "evidence": {
+              "cost_resilience": 1.0,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 0,
+              "excess_return": 0.0,
+              "maximum_drawdown": 0.0,
+              "observations": 1,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.0,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "READY_FOR_FORWARD",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-01T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-1e346da81b1fbfb81e5a1f34",
+            "decision_id": "forward-decision-6a6907b9c273d7544fd34a6a",
+            "evidence": {
+              "cost_resilience": 0.9386765146853328,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 1,
+              "excess_return": -0.001272991562750736,
+              "maximum_drawdown": 0.0,
+              "observations": 2,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.0,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-02T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-b31500791004310b2af4713d",
+            "decision_id": "forward-decision-946a854dfd2aac67842a3bd9",
+            "evidence": {
+              "cost_resilience": 0.9321159166295309,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 2,
+              "excess_return": -0.0005320524130257853,
+              "maximum_drawdown": 0.013823207314156871,
+              "observations": 3,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -3.4385553568213516,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-03T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-6ef2cbef4310c1f4f8c79ad5",
+            "decision_id": "forward-decision-6c8b9a177a3efebb84288efe",
+            "evidence": {
+              "cost_resilience": 0.9161172806500525,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 3,
+              "excess_return": -0.0006037424724825158,
+              "maximum_drawdown": 0.013823207314156871,
+              "observations": 4,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -2.4866590191008693,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-04T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-ba176afea86eff56cbe9650e",
+            "decision_id": "forward-decision-d130c6f05b70bf14800c18b7",
+            "evidence": {
+              "cost_resilience": 0.9786641018621249,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 4,
+              "excess_return": -0.002052828646893712,
+              "maximum_drawdown": 0.013823207314156871,
+              "observations": 5,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 5.177736049478222,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-05T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-e6b5060e6b46423f65b6b83b",
+            "decision_id": "forward-decision-6fba0e2f7b96c664c7f94bd4",
+            "evidence": {
+              "cost_resilience": 0.5494636152461181,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 5,
+              "excess_return": -0.000913534543545147,
+              "maximum_drawdown": 0.02095024682725566,
+              "observations": 6,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.21782447221778586,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met",
+              "minimum cost resilience not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-06T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-4a38ce46a982504f93ef916d",
+            "decision_id": "forward-decision-8d9f1ccdff68e92277038581",
+            "evidence": {
+              "cost_resilience": 0.9858201223202643,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 6,
+              "excess_return": -0.002656366623753126,
+              "maximum_drawdown": 0.02095024682725566,
+              "observations": 7,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 4.185945429497809,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-07T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-0d5016de364c6c35bd157843",
+            "decision_id": "forward-decision-fe083e9ff477552da5034f35",
+            "evidence": {
+              "cost_resilience": 0.9858309493789138,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 7,
+              "excess_return": -0.0026577416585733538,
+              "maximum_drawdown": 0.02095024682725566,
+              "observations": 8,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 3.910261909614223,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-08T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-ff81ae1b688702809ed79df3",
+            "decision_id": "forward-decision-f4f5509a2d964f301f2a716f",
+            "evidence": {
+              "cost_resilience": 0.9897461526173869,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 8,
+              "excess_return": -0.0033453531930007774,
+              "maximum_drawdown": 0.02095024682725566,
+              "observations": 9,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 4.998301792309804,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-09T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-de952e6a90b0b1636f0d3a3e",
+            "decision_id": "forward-decision-11ed518f4005da9bff220c89",
+            "evidence": {
+              "cost_resilience": 0.9485767610869916,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 9,
+              "excess_return": -0.0013530996181148058,
+              "maximum_drawdown": 0.03578461682279632,
+              "observations": 10,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.8577522835855299,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-10T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-5794d21025d80219069dbfdf",
+            "decision_id": "forward-decision-fd66e6989f332f0821fd4752",
+            "evidence": {
+              "cost_resilience": 0.7435942309455368,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 10,
+              "excess_return": -0.0009564143496296751,
+              "maximum_drawdown": 0.042909829451814985,
+              "observations": 11,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.25534111827274264,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-11T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-1e0e85b0e1efd361d4cfe5bd",
+            "decision_id": "forward-decision-691bfa1ef9c3a27c09899d30",
+            "evidence": {
+              "cost_resilience": 0.9896083774387874,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 11,
+              "excess_return": -0.003312360542050863,
+              "maximum_drawdown": 0.042909829451814985,
+              "observations": 12,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.8656744352389283,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-12T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-521be5ade6994bc13ebf910f",
+            "decision_id": "forward-decision-44e566b2f27df0a8e4a5ce5d",
+            "evidence": {
+              "cost_resilience": 0.9863075489390257,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 12,
+              "excess_return": -0.0027204244214855677,
+              "maximum_drawdown": 0.042909829451814985,
+              "observations": 13,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.1021557833722397,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-13T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-2d7661753de882386f623900",
+            "decision_id": "forward-decision-25843e323c5fd8304692a3ba",
+            "evidence": {
+              "cost_resilience": 0.9902063818806501,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 13,
+              "excess_return": -0.003462292538187084,
+              "maximum_drawdown": 0.042909829451814985,
+              "observations": 14,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.742736126939485,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-14T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-6a74b4b7c331256f05940a8d",
+            "decision_id": "forward-decision-0bf5bb3a2311b0f1393bfb03",
+            "evidence": {
+              "cost_resilience": 0.9900334756701421,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 14,
+              "excess_return": -0.0034170923608440873,
+              "maximum_drawdown": 0.042909829451814985,
+              "observations": 15,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.6038541392106915,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-15T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-4edd269c2c42a99c01c48ba0",
+            "decision_id": "forward-decision-a0c5fe249c5776d5630b7175",
+            "evidence": {
+              "cost_resilience": 0.9937655138369517,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 15,
+              "excess_return": -0.004949654607455001,
+              "maximum_drawdown": 0.042909829451814985,
+              "observations": 16,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 3.756927224614539,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-16T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-ca54376e3d78d266e42486e3",
+            "decision_id": "forward-decision-b74dc70b6dcc37e29a541fdd",
+            "evidence": {
+              "cost_resilience": 0.9948962492960427,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 16,
+              "excess_return": -0.005856404131595605,
+              "maximum_drawdown": 0.042909829451814985,
+              "observations": 17,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 4.358886209820489,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-17T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-1af28c00dd6b7451148253af",
+            "decision_id": "forward-decision-777ebb83df20e14d7e1e7ed9",
+            "evidence": {
+              "cost_resilience": 0.9949548623901215,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 17,
+              "excess_return": -0.005914487075645569,
+              "maximum_drawdown": 0.042909829451814985,
+              "observations": 18,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 4.275595254587563,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-18T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-758d7d0383a84e628055f674",
+            "decision_id": "forward-decision-20cfbc0db8c922118c629707",
+            "evidence": {
+              "cost_resilience": 0.9863019237080423,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 18,
+              "excess_return": -0.0027196591491305266,
+              "maximum_drawdown": 0.05485380194288825,
+              "observations": 19,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 1.4091225708808082,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-19T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-61e82ba3e7fc7735b44c820d",
+            "decision_id": "forward-decision-4babe1bafb9cbd8f108103e9",
+            "evidence": {
+              "cost_resilience": 0.9515549755657664,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 19,
+              "excess_return": -0.0013836041108188368,
+              "maximum_drawdown": 0.07779328417543474,
+              "observations": 20,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.5048031442613133,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-20T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-db48c87219d7b40c90758ba1",
+            "decision_id": "forward-decision-af3cb655a2a7006873e48146",
+            "evidence": {
+              "cost_resilience": 0.9616588827892114,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 20,
+              "excess_return": -0.0015224048726976136,
+              "maximum_drawdown": 0.07779328417543474,
+              "observations": 21,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.5784845345179452,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-21T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-af7d4043185bbac22088f126",
+            "decision_id": "forward-decision-b93f4658f0b92db1218ca0ad",
+            "evidence": {
+              "cost_resilience": 0.9341090356268885,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 21,
+              "excess_return": -0.0012441485704541844,
+              "maximum_drawdown": 0.08018767497423562,
+              "observations": 22,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.396880000622733,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-22T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-39f0f443cf69e2c9e2197ba8",
+            "decision_id": "forward-decision-8b4698ccbcff49f773f6b119",
+            "evidence": {
+              "cost_resilience": 0.9670408377920983,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 22,
+              "excess_return": -0.00013375475251953262,
+              "maximum_drawdown": 0.09925265248431625,
+              "observations": 23,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.26366164239425566,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-23T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-f55accbc1572772e11273660",
+            "decision_id": "forward-decision-ecf651785227c82dbeca6b9e",
+            "evidence": {
+              "cost_resilience": 0.9743168118392994,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 23,
+              "excess_return": 8.556739364240507e-05,
+              "maximum_drawdown": 0.10301831806755801,
+              "observations": 24,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.3851370641836953,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-24T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-254401fc7a4a1afc843869bb",
+            "decision_id": "forward-decision-17de229d73044bb41067b934",
+            "evidence": {
+              "cost_resilience": 0.9777638011040312,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 24,
+              "excess_return": -0.0020044077778738068,
+              "maximum_drawdown": 0.10301831806755801,
+              "observations": 25,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.7635635422233303,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-25T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-85ed29a743bc8817a33f9406",
+            "decision_id": "forward-decision-e8de283c7ad915ed6683bf38",
+            "evidence": {
+              "cost_resilience": 0.9826879911064516,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 25,
+              "excess_return": -0.002330802575915225,
+              "maximum_drawdown": 0.10301831806755801,
+              "observations": 26,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.9124919708061429,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-26T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-8bd4a0cd76cee74dab704b1b",
+            "decision_id": "forward-decision-292b940cacfbae399afa2693",
+            "evidence": {
+              "cost_resilience": 0.9381329532287926,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 26,
+              "excess_return": -0.0004954953116941274,
+              "maximum_drawdown": 0.10301831806755801,
+              "observations": 27,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.005830942917827888,
+              "trades": 0
+            },
+            "new_state": "PAUSED_RISK",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "one or more frozen degradation pause thresholds were breached"
+            ],
+            "rule_id": "DEGRADATION_PAUSE",
+            "timestamp": "2024-12-27T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-512bf31f368e0cbd3d23f063",
+            "decision_id": "forward-decision-4201ee2a51bfb24f48e544d3",
+            "evidence": {
+              "cost_resilience": 0.9798547314821792,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 27,
+              "excess_return": 0.0003586795924074293,
+              "maximum_drawdown": 0.10770753539125344,
+              "observations": 28,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.41035962761468225,
+              "trades": 0
+            },
+            "new_state": "PAUSED_RISK",
+            "previous_state": "PAUSED_RISK",
+            "reasons": [
+              "one or more frozen degradation pause thresholds were breached"
+            ],
+            "rule_id": "DEGRADATION_PAUSE",
+            "timestamp": "2024-12-28T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-40284fb54f25209979f1b59d",
+            "decision_id": "forward-decision-7756ed35da454081808a8ca1",
+            "evidence": {
+              "cost_resilience": 0.9621251655657675,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 28,
+              "excess_return": -0.01074557748332472,
+              "maximum_drawdown": 0.10838883386567977,
+              "observations": 29,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.4220185636543698,
+              "trades": 1
+            },
+            "new_state": "PAUSED_RISK",
+            "previous_state": "PAUSED_RISK",
+            "reasons": [
+              "one or more frozen degradation pause thresholds were breached"
+            ],
+            "rule_id": "DEGRADATION_PAUSE",
+            "timestamp": "2024-12-29T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-ad93885e6b8a8dcaf847c07d",
+            "decision_id": "forward-decision-f69353718d64abbfd6c13d8e",
+            "evidence": {
+              "cost_resilience": 0.9621251655657675,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 29,
+              "excess_return": 0.006192930937450214,
+              "maximum_drawdown": 0.10838883386567977,
+              "observations": 30,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.41493802372028066,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "PAUSED_RISK",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-30T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-85e93de6081ca0b0acf774fd",
+            "decision_id": "forward-decision-2b66fd105efb9097e137041a",
+            "evidence": {
+              "cost_resilience": 0.9621251655657675,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 30,
+              "excess_return": 0.015389657933624235,
+              "maximum_drawdown": 0.10838883386567977,
+              "observations": 31,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.40820172783854225,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-31T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          },
+          {
+            "cycle_id": "forward-cycle-5b83e0ffbb6753f8398b5fcc",
+            "decision_id": "forward-decision-d00c908b423623bd1ef7cea2",
+            "evidence": {
+              "cost_resilience": 0.9227477265891706,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 31,
+              "excess_return": 0.014401817357735047,
+              "maximum_drawdown": 0.10838883386567977,
+              "observations": 32,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.22949485444244183,
+              "trades": 1
+            },
+            "new_state": "PAUSED_RISK",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "one or more frozen degradation pause thresholds were breached"
+            ],
+            "rule_id": "DEGRADATION_PAUSE",
+            "timestamp": "2025-01-01T00:00:00Z",
+            "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+          }
+        ],
+        "manifest": {
+          "allocation_weight": 0.18,
+          "assets": [
+            {
+              "asset_class": "CRYPTOCURRENCY",
+              "currency": "USD",
+              "exchange": "YAHOO",
+              "symbol": "BTCUSD"
+            }
+          ],
+          "baseline_profile": {
+            "annualised_volatility": 0.2,
+            "expectancy": 0.0,
+            "hit_rate": 0.5,
+            "signal_frequency": 0.4,
+            "source_experiment_id": "phase2-yahoo-demo-7e23dd823599693e:ma-crossover:v1",
+            "turnover_per_observation": 0.02
+          },
+          "benchmark": {
+            "benchmark_id": "BTCUSD-buy-and-hold-v1",
+            "method": "BUY_AND_HOLD",
+            "symbols": [
+              "BTCUSD"
+            ],
+            "version": "v1"
+          },
+          "code_revision": "2ac0ba3108f244929fcb7c8f967be4f7dd6e96df",
+          "configuration_fingerprint": "1d1f10ebb8d13f5c8a493017ca7a42b7092ba57d5f8572740fd465e531c64f6c",
+          "costs": {
+            "commission_bps": 2.0,
+            "fixed_fee": 0.25,
+            "minimum_commission": 0.25,
+            "slippage_bps": 3.0,
+            "spread_bps": 5.0
+          },
+          "created_at": "2024-12-01T00:00:00Z",
+          "data_policy": {
+            "adjustment_policy": "TOTAL_RETURN_ADJUSTED",
+            "corporate_action_policy": "frozen Phase 2 snapshot policy",
+            "interval": "1d",
+            "maximum_staleness": "P1DT12H",
+            "provider_name": "immutable-historical-replay",
+            "provider_version": "phase3-replay-v1",
+            "reject_gaps": true,
+            "version": "phase3-replay-data-v1",
+            "warmup_dataset_id": "phase2-yahoo-demo-7e23dd823599693e"
+          },
+          "degradation_policy": {
+            "fail_drawdown": 0.2,
+            "maximum_signal_frequency_ratio": 3.0,
+            "maximum_volatility_ratio": 2.0,
+            "minimum_observations": 20,
+            "pause_drawdown": 0.12,
+            "pause_excess_return": -0.1,
+            "pause_sharpe": -1.0,
+            "retire_after_failed_evaluations": 3,
+            "rolling_window": 20,
+            "version": "phase3-degradation-v1",
+            "warning_excess_return": -0.05,
+            "warning_sharpe": -0.5
+          },
+          "portfolio_id": "phase3-replay-7e23dd823599693e",
+          "portfolio_starting_capital": 300000.0,
+          "provenance": "REPLAY",
+          "qualification_policy": {
+            "maximum_data_quality_failures": 0,
+            "maximum_drawdown": 0.15,
+            "maximum_risk_breaches": 0,
+            "minimum_cost_resilience": 0.7,
+            "minimum_elapsed_days": 90,
+            "minimum_excess_return": 0.0,
+            "minimum_observations": 60,
+            "minimum_sharpe": 0.5,
+            "minimum_trades": 5,
+            "version": "phase3-qualification-v1"
+          },
+          "random_seed": 1729,
+          "risk_policy": {
+            "limits": {
+              "abnormal_price_move": 0.2,
+              "correlation_threshold": 0.85,
+              "maximum_asset_class_exposure": 0.6,
+              "maximum_concurrent_positions": 8,
+              "maximum_correlated_exposure": 0.4,
+              "maximum_daily_simulated_loss": 0.03,
+              "maximum_drawdown": 0.2,
+              "maximum_portfolio_exposure": 0.9,
+              "maximum_position_percentage": 0.2,
+              "maximum_trades_per_period": 20,
+              "maximum_turnover_per_period": 1.5,
+              "maximum_weekly_simulated_loss": 0.07,
+              "minimum_cash_reserve": 0.05,
+              "stale_after": "PT5M"
+            },
+            "maximum_strategy_allocation": 0.25,
+            "version": "phase3-paper-risk-v1"
+          },
+          "start_timestamp": "2024-12-01T00:00:00Z",
+          "strategy": {
+            "asset_class": "CRYPTOCURRENCY",
+            "created_at": "2024-12-01T00:00:00Z",
+            "creation_method": "reference",
+            "creation_reason": "Reference strategy for engine validation",
+            "description": "Long when the fast moving average exceeds the slow moving average.",
+            "eligible_regimes": [],
+            "entry_conditions": [
+              "20-day average > 60-day average"
+            ],
+            "exit_conditions": [
+              "20-day average <= 60-day average"
+            ],
+            "indicators": [
+              {
+                "name": "simple_moving_average",
+                "parameters": {
+                  "window": 20
+                }
+              },
+              {
+                "name": "simple_moving_average",
+                "parameters": {
+                  "window": 60
+                }
+              }
+            ],
+            "name": "Moving Average Crossover",
+            "parameters": {
+              "fast_window": 20,
+              "slow_window": 60,
+              "strategy_type": "moving_average_crossover"
+            },
+            "parent_strategy": null,
+            "permitted_assets": [
+              "BTCUSD"
+            ],
+            "position_sizing_method": "fractional_equity",
+            "state": "CREATED",
+            "stop_conditions": [],
+            "strategy_id": "ma-crossover",
+            "timeframe": "1d",
+            "version": 1
+          },
+          "strategy_source_fingerprint": "eedf2da227ada54c8167d53498b6f48d66be0428444a39095397553820754aa3",
+          "trial_id": "forward-1d1f10ebb8d13f5c8a49",
+          "universe_version": "phase2-yahoo-demo-7e23dd823599693e:phase3-replay-universe-v1"
+        },
+        "minimum_evidence": {
+          "elapsed_days": 90,
+          "observations": 60,
+          "trades": 5
+        },
+        "missing_evidence": [
+          "minimum elapsed days",
+          "minimum observations",
+          "minimum completed trades",
+          "minimum Sharpe"
+        ],
+        "observation_count": 32,
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "qualification_meaning": "PAPER qualification only; no live execution approval",
+        "signal_count": 32,
+        "start_timestamp": "2024-12-01T00:00:00Z",
+        "state": "PAUSED_RISK",
+        "strategy_version": "ma-crossover:v1",
+        "trial_id": "forward-1d1f10ebb8d13f5c8a49"
+      },
+      {
+        "allocation_weight": 0.18,
+        "benchmark": {
+          "benchmark_id": "SPY-buy-and-hold-v1",
+          "method": "BUY_AND_HOLD",
+          "symbols": [
+            "SPY"
+          ],
+          "version": "v1"
+        },
+        "configuration_fingerprint": "9e9bacf7b6e2143688f46b376071dea93c7a1d22819de8cd0636c89746c10394",
+        "fill_count": 3,
+        "latest_observation_at": "2025-01-01T00:00:00Z",
+        "latest_performance": {
+          "annualised_volatility": 0.10784808360887338,
+          "benchmark_return": -0.025806244565718783,
+          "cost_resilience": 0.9527641029460595,
+          "costs": 76.5995357880646,
+          "elapsed_days": 31,
+          "excess_return": -0.002805582829285891,
+          "expectancy": -1098.4299389907533,
+          "hit_rate": 0.0,
+          "maximum_drawdown": 0.03463173085116189,
+          "observations": 21,
+          "regime_mix": {
+            "BULLISH/LOW/LOW_LIQUIDITY": 5,
+            "SIDEWAYS/LOW/HIGH_LIQUIDITY": 9,
+            "SIDEWAYS/LOW/LOW_LIQUIDITY": 7
+          },
+          "sharpe_ratio": -2.134317762085215,
+          "signal_frequency": 0.8571428571428571,
+          "sortino_ratio": -2.4282161935404036,
+          "total_return": -0.028611827395004674,
+          "trades": 1,
+          "trial_id": "forward-9e9bacf7b6e2143688f4",
+          "turnover": 2.8095551298508523
+        },
+        "lifecycle_history": [
+          {
+            "cycle_id": "forward-cycle-7fe84c7452efb251d11f5aa0",
+            "decision_id": "forward-decision-21cc69387e0a23a5ce0a9f54",
+            "evidence": {
+              "cost_resilience": 1.0,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 0,
+              "excess_return": 0.0,
+              "maximum_drawdown": 0.0,
+              "observations": 0,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.0,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "READY_FOR_FORWARD",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-01T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-1e346da81b1fbfb81e5a1f34",
+            "decision_id": "forward-decision-8187db9168d0c8493d1addfa",
+            "evidence": {
+              "cost_resilience": 1.0,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 1,
+              "excess_return": 0.0,
+              "maximum_drawdown": 0.0,
+              "observations": 0,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.0,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-02T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-b31500791004310b2af4713d",
+            "decision_id": "forward-decision-2ffe8c32f7b7e63ffa13e4a4",
+            "evidence": {
+              "cost_resilience": 1.0,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 2,
+              "excess_return": 0.0,
+              "maximum_drawdown": 0.0,
+              "observations": 1,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.0,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-03T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-6ef2cbef4310c1f4f8c79ad5",
+            "decision_id": "forward-decision-f5825b186746c27e66ec3bb6",
+            "evidence": {
+              "cost_resilience": 0.17449040891342815,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 3,
+              "excess_return": -0.00036263774127864856,
+              "maximum_drawdown": 0.0,
+              "observations": 2,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 9.165151389911678,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met",
+              "minimum cost resilience not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-04T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-ba176afea86eff56cbe9650e",
+            "decision_id": "forward-decision-c57aaa3bde401e53a27d7b34",
+            "evidence": {
+              "cost_resilience": 0.9260252073564007,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 4,
+              "excess_return": -0.0006764962604008939,
+              "maximum_drawdown": 0.0,
+              "observations": 3,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 8.119009362115563,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-05T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-e6b5060e6b46423f65b6b83b",
+            "decision_id": "forward-decision-414831125243bc1e535cff84",
+            "evidence": {
+              "cost_resilience": 0.9023103287742567,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 5,
+              "excess_return": -0.0005928051736019402,
+              "maximum_drawdown": 0.001563449240354342,
+              "observations": 4,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 4.880601593530491,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-06T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-4a38ce46a982504f93ef916d",
+            "decision_id": "forward-decision-8cf163fb7b6e304daeeb0b50",
+            "evidence": {
+              "cost_resilience": 0.9286263894815456,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 6,
+              "excess_return": -0.0006890606109388742,
+              "maximum_drawdown": 0.001563449240354342,
+              "observations": 5,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 6.32773154923336,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-07T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-0d5016de364c6c35bd157843",
+            "decision_id": "forward-decision-f3b4ab1cd7467c91c9324165",
+            "evidence": {
+              "cost_resilience": 0.9286263894815456,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 7,
+              "excess_return": -0.0006890606109388742,
+              "maximum_drawdown": 0.001563449240354342,
+              "observations": 5,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 5.862141460620114,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-08T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-ff81ae1b688702809ed79df3",
+            "decision_id": "forward-decision-fc6927fd5831aad0ef7f2414",
+            "evidence": {
+              "cost_resilience": 0.9286263894815456,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 8,
+              "excess_return": -0.0006890606109388742,
+              "maximum_drawdown": 0.001563449240354342,
+              "observations": 5,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 5.4860747179252884,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-09T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-de952e6a90b0b1636f0d3a3e",
+            "decision_id": "forward-decision-fb208ee9c21a2e769d465ac7",
+            "evidence": {
+              "cost_resilience": 0.7324958980282278,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 9,
+              "excess_return": -0.0004270808686641647,
+              "maximum_drawdown": 0.004892945342695909,
+              "observations": 6,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.8365055792561538,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-10T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-5794d21025d80219069dbfdf",
+            "decision_id": "forward-decision-1bc88f333be165908cef0e3d",
+            "evidence": {
+              "cost_resilience": 0.774351460526109,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 10,
+              "excess_return": -0.00026972932180269193,
+              "maximum_drawdown": 0.007831769969733116,
+              "observations": 7,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.8978475272571652,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-11T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-1e0e85b0e1efd361d4cfe5bd",
+            "decision_id": "forward-decision-18355aa752f72896d7e8fade",
+            "evidence": {
+              "cost_resilience": 0.9222523257678293,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 11,
+              "excess_return": -0.0006597663845187007,
+              "maximum_drawdown": 0.007831769969733116,
+              "observations": 8,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.3487388405798133,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-12T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-521be5ade6994bc13ebf910f",
+            "decision_id": "forward-decision-5d9c4d7ac3bf59143b14f80a",
+            "evidence": {
+              "cost_resilience": 0.6138401070360622,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 12,
+              "excess_return": -0.0003977866422439913,
+              "maximum_drawdown": 0.007831769969733116,
+              "observations": 9,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.29887968762653544,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met",
+              "minimum cost resilience not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-13T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-2d7661753de882386f623900",
+            "decision_id": "forward-decision-00fcb6855b76fd2f8a22ca3f",
+            "evidence": {
+              "cost_resilience": 0.544601684763226,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 13,
+              "excess_return": -0.0003877455886605041,
+              "maximum_drawdown": 0.007831769969733116,
+              "observations": 10,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.22319297986021291,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met",
+              "minimum cost resilience not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-14T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-6a74b4b7c331256f05940a8d",
+            "decision_id": "forward-decision-80321f5556b826c6c84e5cfa",
+            "evidence": {
+              "cost_resilience": 0.544601684763226,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 14,
+              "excess_return": -0.0003877455886605041,
+              "maximum_drawdown": 0.007831769969733116,
+              "observations": 10,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.2157116390169419,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met",
+              "minimum cost resilience not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-15T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-4edd269c2c42a99c01c48ba0",
+            "decision_id": "forward-decision-cf4785355a96009cd1697b45",
+            "evidence": {
+              "cost_resilience": 0.544601684763226,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 15,
+              "excess_return": -0.0003877455886605041,
+              "maximum_drawdown": 0.007831769969733116,
+              "observations": 10,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.2089295256876078,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met",
+              "minimum cost resilience not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-16T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-ca54376e3d78d266e42486e3",
+            "decision_id": "forward-decision-3b0b9f306cc743eecec8b5d0",
+            "evidence": {
+              "cost_resilience": 0.9062171079887544,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 16,
+              "excess_return": -0.0006036803749389641,
+              "maximum_drawdown": 0.007831769969733116,
+              "observations": 11,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 1.4024905966145391,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-17T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-1af28c00dd6b7451148253af",
+            "decision_id": "forward-decision-ed290eef3b438dfaceb1e3e0",
+            "evidence": {
+              "cost_resilience": 0.5932248425682867,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 17,
+              "excess_return": -0.0003944396243829029,
+              "maximum_drawdown": 0.007831769969733116,
+              "observations": 12,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.21826099310641825,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met",
+              "minimum cost resilience not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-18T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-758d7d0383a84e628055f674",
+            "decision_id": "forward-decision-9f192d7d79517c391995eb8c",
+            "evidence": {
+              "cost_resilience": 0.9829490704427424,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 18,
+              "excess_return": 0.0011129435676449084,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 13,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -3.260043114649201,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-19T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-61e82ba3e7fc7735b44c820d",
+            "decision_id": "forward-decision-4ab0731f9976b02de69d799d",
+            "evidence": {
+              "cost_resilience": 0.95543016630616,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 19,
+              "excess_return": 0.008699565675247767,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 14,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -2.223151357361194,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-20T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-db48c87219d7b40c90758ba1",
+            "decision_id": "forward-decision-ca0dac01318b97a683b5e417",
+            "evidence": {
+              "cost_resilience": 0.95543016630616,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 20,
+              "excess_return": -0.002962533426229319,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 15,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -2.1687451882815765,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-21T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-af7d4043185bbac22088f126",
+            "decision_id": "forward-decision-11684361309b7167c5c8de2e",
+            "evidence": {
+              "cost_resilience": 0.95543016630616,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 21,
+              "excess_return": -0.002962533426229319,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 15,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -2.1181385608230423,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-22T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-39f0f443cf69e2c9e2197ba8",
+            "decision_id": "forward-decision-3a2c72fc7525bfdc8e240b12",
+            "evidence": {
+              "cost_resilience": 0.95543016630616,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 22,
+              "excess_return": -0.002962533426229319,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 15,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -2.070909853573605,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-23T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-f55accbc1572772e11273660",
+            "decision_id": "forward-decision-2555189b3f96893bdfaecbd6",
+            "evidence": {
+              "cost_resilience": 0.9139391506633271,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 23,
+              "excess_return": -0.0035696118243673247,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 16,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -1.455292861916021,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-24T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-254401fc7a4a1afc843869bb",
+            "decision_id": "forward-decision-484d7b6926be6888d62560a0",
+            "evidence": {
+              "cost_resilience": 0.7667675848633596,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 24,
+              "excess_return": -0.004156163227846288,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 17,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.3764394272968702,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-25T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-85ed29a743bc8817a33f9406",
+            "decision_id": "forward-decision-a391739d40c996dbb0a44d43",
+            "evidence": {
+              "cost_resilience": 0.7667675848633596,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 25,
+              "excess_return": -0.004156163227846288,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 17,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.36915005995183797,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-26T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-8bd4a0cd76cee74dab704b1b",
+            "decision_id": "forward-decision-d0536344bc306b99b2f1e108",
+            "evidence": {
+              "cost_resilience": 0.7643261692955342,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 26,
+              "excess_return": -0.004159716415498282,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 18,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -0.3566390436473514,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-27T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-512bf31f368e0cbd3d23f063",
+            "decision_id": "forward-decision-f09a498ef1cf136733dd2755",
+            "evidence": {
+              "cost_resilience": 0.911226566135904,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 27,
+              "excess_return": -0.0035980152903108964,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 19,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -1.1776439289059022,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-28T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-40284fb54f25209979f1b59d",
+            "decision_id": "forward-decision-b6c9cc454259c6737667fa5a",
+            "evidence": {
+              "cost_resilience": 0.911226566135904,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 28,
+              "excess_return": -0.0035980152903108964,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 19,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -1.1570992749999067,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-29T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-ad93885e6b8a8dcaf847c07d",
+            "decision_id": "forward-decision-b6901a15487f90f7218135ec",
+            "evidence": {
+              "cost_resilience": 0.911226566135904,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 29,
+              "excess_return": -0.0035980152903108964,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 19,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -1.1375920177180512,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-30T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-85e93de6081ca0b0acf774fd",
+            "decision_id": "forward-decision-48b593ec8db0753d560a1f78",
+            "evidence": {
+              "cost_resilience": 0.9467986561681911,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 30,
+              "excess_return": -0.002995482805625116,
+              "maximum_drawdown": 0.03365568603344804,
+              "observations": 20,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -1.908456905506846,
+              "trades": 1
+            },
+            "new_state": "PAUSED_RISK",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "one or more frozen degradation pause thresholds were breached"
+            ],
+            "rule_id": "DEGRADATION_PAUSE",
+            "timestamp": "2024-12-31T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          },
+          {
+            "cycle_id": "forward-cycle-5b83e0ffbb6753f8398b5fcc",
+            "decision_id": "forward-decision-3fc52aefa5f4930c04e96427",
+            "evidence": {
+              "cost_resilience": 0.9527641029460595,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 31,
+              "excess_return": -0.002805582829285891,
+              "maximum_drawdown": 0.03463173085116189,
+              "observations": 21,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": -2.134317762085215,
+              "trades": 1
+            },
+            "new_state": "PAUSED_RISK",
+            "previous_state": "PAUSED_RISK",
+            "reasons": [
+              "one or more frozen degradation pause thresholds were breached"
+            ],
+            "rule_id": "DEGRADATION_PAUSE",
+            "timestamp": "2025-01-01T00:00:00Z",
+            "trial_id": "forward-9e9bacf7b6e2143688f4"
+          }
+        ],
+        "manifest": {
+          "allocation_weight": 0.18,
+          "assets": [
+            {
+              "asset_class": "ETF",
+              "currency": "USD",
+              "exchange": "YAHOO",
+              "symbol": "SPY"
+            }
+          ],
+          "baseline_profile": {
+            "annualised_volatility": 0.2,
+            "expectancy": 0.0,
+            "hit_rate": 0.5,
+            "signal_frequency": 0.4,
+            "source_experiment_id": "phase2-yahoo-demo-7e23dd823599693e:momentum:v1",
+            "turnover_per_observation": 0.02
+          },
+          "benchmark": {
+            "benchmark_id": "SPY-buy-and-hold-v1",
+            "method": "BUY_AND_HOLD",
+            "symbols": [
+              "SPY"
+            ],
+            "version": "v1"
+          },
+          "code_revision": "2ac0ba3108f244929fcb7c8f967be4f7dd6e96df",
+          "configuration_fingerprint": "9e9bacf7b6e2143688f46b376071dea93c7a1d22819de8cd0636c89746c10394",
+          "costs": {
+            "commission_bps": 2.0,
+            "fixed_fee": 0.25,
+            "minimum_commission": 0.25,
+            "slippage_bps": 3.0,
+            "spread_bps": 5.0
+          },
+          "created_at": "2024-12-01T00:00:00Z",
+          "data_policy": {
+            "adjustment_policy": "TOTAL_RETURN_ADJUSTED",
+            "corporate_action_policy": "frozen Phase 2 snapshot policy",
+            "interval": "1d",
+            "maximum_staleness": "P1DT12H",
+            "provider_name": "immutable-historical-replay",
+            "provider_version": "phase3-replay-v1",
+            "reject_gaps": true,
+            "version": "phase3-replay-data-v1",
+            "warmup_dataset_id": "phase2-yahoo-demo-7e23dd823599693e"
+          },
+          "degradation_policy": {
+            "fail_drawdown": 0.2,
+            "maximum_signal_frequency_ratio": 3.0,
+            "maximum_volatility_ratio": 2.0,
+            "minimum_observations": 20,
+            "pause_drawdown": 0.12,
+            "pause_excess_return": -0.1,
+            "pause_sharpe": -1.0,
+            "retire_after_failed_evaluations": 3,
+            "rolling_window": 20,
+            "version": "phase3-degradation-v1",
+            "warning_excess_return": -0.05,
+            "warning_sharpe": -0.5
+          },
+          "portfolio_id": "phase3-replay-7e23dd823599693e",
+          "portfolio_starting_capital": 300000.0,
+          "provenance": "REPLAY",
+          "qualification_policy": {
+            "maximum_data_quality_failures": 0,
+            "maximum_drawdown": 0.15,
+            "maximum_risk_breaches": 0,
+            "minimum_cost_resilience": 0.7,
+            "minimum_elapsed_days": 90,
+            "minimum_excess_return": 0.0,
+            "minimum_observations": 60,
+            "minimum_sharpe": 0.5,
+            "minimum_trades": 5,
+            "version": "phase3-qualification-v1"
+          },
+          "random_seed": 1729,
+          "risk_policy": {
+            "limits": {
+              "abnormal_price_move": 0.2,
+              "correlation_threshold": 0.85,
+              "maximum_asset_class_exposure": 0.6,
+              "maximum_concurrent_positions": 8,
+              "maximum_correlated_exposure": 0.4,
+              "maximum_daily_simulated_loss": 0.03,
+              "maximum_drawdown": 0.2,
+              "maximum_portfolio_exposure": 0.9,
+              "maximum_position_percentage": 0.2,
+              "maximum_trades_per_period": 20,
+              "maximum_turnover_per_period": 1.5,
+              "maximum_weekly_simulated_loss": 0.07,
+              "minimum_cash_reserve": 0.05,
+              "stale_after": "PT5M"
+            },
+            "maximum_strategy_allocation": 0.25,
+            "version": "phase3-paper-risk-v1"
+          },
+          "start_timestamp": "2024-12-01T00:00:00Z",
+          "strategy": {
+            "asset_class": "ETF",
+            "created_at": "2024-12-01T00:00:00Z",
+            "creation_method": "reference",
+            "creation_reason": "Reference strategy for engine validation",
+            "description": "Long when trailing return exceeds a fixed threshold.",
+            "eligible_regimes": [],
+            "entry_conditions": [
+              "40-day momentum > 2%"
+            ],
+            "exit_conditions": [
+              "40-day momentum <= 2%"
+            ],
+            "indicators": [
+              {
+                "name": "momentum",
+                "parameters": {
+                  "lookback": 40
+                }
+              }
+            ],
+            "name": "Momentum",
+            "parameters": {
+              "lookback": 40,
+              "strategy_type": "momentum",
+              "threshold": 0.02
+            },
+            "parent_strategy": null,
+            "permitted_assets": [
+              "SPY"
+            ],
+            "position_sizing_method": "fractional_equity",
+            "state": "CREATED",
+            "stop_conditions": [],
+            "strategy_id": "momentum",
+            "timeframe": "1d",
+            "version": 1
+          },
+          "strategy_source_fingerprint": "625069274684287e6871c2933491ca36bd5afd1f322b79c71f05cb8d4f75d30e",
+          "trial_id": "forward-9e9bacf7b6e2143688f4",
+          "universe_version": "phase2-yahoo-demo-7e23dd823599693e:phase3-replay-universe-v1"
+        },
+        "minimum_evidence": {
+          "elapsed_days": 90,
+          "observations": 60,
+          "trades": 5
+        },
+        "missing_evidence": [
+          "minimum elapsed days",
+          "minimum observations",
+          "minimum completed trades",
+          "minimum Sharpe",
+          "benchmark-relative return"
+        ],
+        "observation_count": 21,
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "qualification_meaning": "PAPER qualification only; no live execution approval",
+        "signal_count": 21,
+        "start_timestamp": "2024-12-01T00:00:00Z",
+        "state": "PAUSED_RISK",
+        "strategy_version": "momentum:v1",
+        "trial_id": "forward-9e9bacf7b6e2143688f4"
+      },
+      {
+        "allocation_weight": 0.18,
+        "benchmark": {
+          "benchmark_id": "QQQ-buy-and-hold-v1",
+          "method": "BUY_AND_HOLD",
+          "symbols": [
+            "QQQ"
+          ],
+          "version": "v1"
+        },
+        "configuration_fingerprint": "e17103a978d25f9bcc3117c49e4cd15d1bd03ee1faa41e128863fb29589ef5c5",
+        "fill_count": 8,
+        "latest_observation_at": "2025-01-01T00:00:00Z",
+        "latest_performance": {
+          "annualised_volatility": 0.05367926682285447,
+          "benchmark_return": -0.006279170194072092,
+          "cost_resilience": 0.7964832495324297,
+          "costs": 209.3278688448404,
+          "elapsed_days": 31,
+          "excess_return": 0.021450015474137274,
+          "expectancy": 204.80641128087868,
+          "hit_rate": 0.75,
+          "maximum_drawdown": 0.009835524870687617,
+          "observations": 21,
+          "regime_mix": {
+            "BULLISH/LOW/HIGH_LIQUIDITY": 8,
+            "BULLISH/LOW/LOW_LIQUIDITY": 11,
+            "SIDEWAYS/LOW/HIGH_LIQUIDITY": 1,
+            "SIDEWAYS/LOW/LOW_LIQUIDITY": 1
+          },
+          "sharpe_ratio": 2.306607607233528,
+          "signal_frequency": 0.3333333333333333,
+          "sortino_ratio": 4.932855992680903,
+          "total_return": 0.015170845280065182,
+          "trades": 4,
+          "trial_id": "forward-e17103a978d25f9bcc31",
+          "turnover": 7.678803038109301
+        },
+        "lifecycle_history": [
+          {
+            "cycle_id": "forward-cycle-7fe84c7452efb251d11f5aa0",
+            "decision_id": "forward-decision-356e7be7f78f22eb48e2064f",
+            "evidence": {
+              "cost_resilience": 1.0,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 0,
+              "excess_return": 0.0,
+              "maximum_drawdown": 0.0,
+              "observations": 0,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.0,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "READY_FOR_FORWARD",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-01T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-1e346da81b1fbfb81e5a1f34",
+            "decision_id": "forward-decision-d1234d3e17ce0cc51dc497f9",
+            "evidence": {
+              "cost_resilience": 1.0,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 1,
+              "excess_return": 0.0,
+              "maximum_drawdown": 0.0,
+              "observations": 0,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.0,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-02T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-b31500791004310b2af4713d",
+            "decision_id": "forward-decision-468eee898734cd934429c3de",
+            "evidence": {
+              "cost_resilience": 1.0,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 2,
+              "excess_return": 0.0,
+              "maximum_drawdown": 0.0,
+              "observations": 1,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 0.0,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "minimum Sharpe requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-03T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-6ef2cbef4310c1f4f8c79ad5",
+            "decision_id": "forward-decision-d11e5b7121f46ac77f019d01",
+            "evidence": {
+              "cost_resilience": 0.9070232818874029,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 3,
+              "excess_return": 0.0015991670996464702,
+              "maximum_drawdown": 0.0,
+              "observations": 2,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 9.16515138991168,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-04T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-ba176afea86eff56cbe9650e",
+            "decision_id": "forward-decision-9b53b40394222be1514496ad",
+            "evidence": {
+              "cost_resilience": 0.9717320595748512,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 4,
+              "excess_return": 0.0009726447078874934,
+              "maximum_drawdown": 0.0,
+              "observations": 3,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 11.742403331591253,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-05T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-e6b5060e6b46423f65b6b83b",
+            "decision_id": "forward-decision-d09f9cd64d724bbc80005712",
+            "evidence": {
+              "cost_resilience": 0.9664301512474267,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 5,
+              "excess_return": 0.0011148220669672249,
+              "maximum_drawdown": 0.0026287617405655883,
+              "observations": 4,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 7.7152909345848455,
+              "trades": 0
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-06T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-4a38ce46a982504f93ef916d",
+            "decision_id": "forward-decision-b36fbe12f087ce89000b29c5",
+            "evidence": {
+              "cost_resilience": 0.9367371054159083,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 6,
+              "excess_return": -0.007440058940920036,
+              "maximum_drawdown": 0.0026287617405655883,
+              "observations": 5,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 7.3304873316031465,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-07T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-0d5016de364c6c35bd157843",
+            "decision_id": "forward-decision-ddb02c5403f05153b72f324c",
+            "evidence": {
+              "cost_resilience": 0.9367371054159083,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 7,
+              "excess_return": -0.007440058940920036,
+              "maximum_drawdown": 0.0026287617405655883,
+              "observations": 5,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 6.760525850863771,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-08T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-ff81ae1b688702809ed79df3",
+            "decision_id": "forward-decision-43f03205acfd683b2f1932ca",
+            "evidence": {
+              "cost_resilience": 0.9367371054159083,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 8,
+              "excess_return": -0.007440058940920036,
+              "maximum_drawdown": 0.0026287617405655883,
+              "observations": 5,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 6.306568758692416,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-09T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-de952e6a90b0b1636f0d3a3e",
+            "decision_id": "forward-decision-325244506ac8cfd651249cb9",
+            "evidence": {
+              "cost_resilience": 0.8424623234238344,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 9,
+              "excess_return": -0.006007689223177293,
+              "maximum_drawdown": 0.008547667847796037,
+              "observations": 6,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.7545689023072164,
+              "trades": 1
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-10T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-5794d21025d80219069dbfdf",
+            "decision_id": "forward-decision-f5ebd756bbd1a6c9165e3571",
+            "evidence": {
+              "cost_resilience": 0.8278739131928533,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 10,
+              "excess_return": -0.001007962000659779,
+              "maximum_drawdown": 0.008547667847796037,
+              "observations": 7,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 3.141670278970556,
+              "trades": 2
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-11T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-1e0e85b0e1efd361d4cfe5bd",
+            "decision_id": "forward-decision-9289d85b5af53042befb247b",
+            "evidence": {
+              "cost_resilience": 0.8278739131928533,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 11,
+              "excess_return": -0.019094692489909137,
+              "maximum_drawdown": 0.008547667847796037,
+              "observations": 8,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 3.004618011500198,
+              "trades": 2
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-12T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-521be5ade6994bc13ebf910f",
+            "decision_id": "forward-decision-986bcde32619a2a0fd56b2b8",
+            "evidence": {
+              "cost_resilience": 0.727367666462369,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 12,
+              "excess_return": -0.015312170771778932,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 9,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 1.9565697593914018,
+              "trades": 2
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-13T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-2d7661753de882386f623900",
+            "decision_id": "forward-decision-0fbeb281f35f8f45ed576afc",
+            "evidence": {
+              "cost_resilience": 0.8162765048496781,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 13,
+              "excess_return": -0.016695776227376946,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 10,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 3.485882308521778,
+              "trades": 3
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-14T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-6a74b4b7c331256f05940a8d",
+            "decision_id": "forward-decision-78f3ce4aa4d0bb7c5d265483",
+            "evidence": {
+              "cost_resilience": 0.8162765048496781,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 14,
+              "excess_return": -0.016695776227376946,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 10,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 3.3627947334998485,
+              "trades": 3
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-15T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-4edd269c2c42a99c01c48ba0",
+            "decision_id": "forward-decision-629060db450a8de7137efe5b",
+            "evidence": {
+              "cost_resilience": 0.8162765048496781,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 15,
+              "excess_return": -0.016695776227376946,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 10,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 3.251853744310728,
+              "trades": 3
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-16T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-ca54376e3d78d266e42486e3",
+            "decision_id": "forward-decision-7c1f8e5eefe3e025d7f8d29f",
+            "evidence": {
+              "cost_resilience": 0.8632347340425962,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 16,
+              "excess_return": -0.023024930089894813,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 11,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 4.721942155236583,
+              "trades": 3
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-17T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-1af28c00dd6b7451148253af",
+            "decision_id": "forward-decision-75fe94905b0ff322188af913",
+            "evidence": {
+              "cost_resilience": 0.8345282247409562,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 17,
+              "excess_return": -0.022721745557768402,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 12,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 3.5192399898844404,
+              "trades": 3
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-18T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-758d7d0383a84e628055f674",
+            "decision_id": "forward-decision-92477c97ef3827dda6b95555",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 18,
+              "excess_return": 0.012880855438275773,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 13,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 3.014223502738936,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-19T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-61e82ba3e7fc7735b44c820d",
+            "decision_id": "forward-decision-68ece0481b9ccdf58eb625a2",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 19,
+              "excess_return": 0.017344300760532727,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 14,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.9354203193699173,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-20T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-db48c87219d7b40c90758ba1",
+            "decision_id": "forward-decision-486360e3d33ee16c9fb0a716",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 20,
+              "excess_return": 0.008630697877843208,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 15,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.8624830876420813,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-21T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-af7d4043185bbac22088f126",
+            "decision_id": "forward-decision-fea2d7d1dff7afe9d3f03d38",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 21,
+              "excess_return": 0.008630697877843208,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 15,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.794719354701286,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-22T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-39f0f443cf69e2c9e2197ba8",
+            "decision_id": "forward-decision-a2adb929af9dea5531801b73",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 22,
+              "excess_return": 0.008630697877843208,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 15,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.731545805897848,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-23T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-f55accbc1572772e11273660",
+            "decision_id": "forward-decision-75774ab8a00ef60f2521d3c1",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 23,
+              "excess_return": -0.0011755192243572132,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 16,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.672467128792766,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-24T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-254401fc7a4a1afc843869bb",
+            "decision_id": "forward-decision-abde5041b73fbb86749460e8",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 24,
+              "excess_return": -0.014957171600325614,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 17,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.617059667461239,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-25T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-85ed29a743bc8817a33f9406",
+            "decision_id": "forward-decision-9f2a4b735aa699a9c687716f",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 25,
+              "excess_return": -0.014957171600325614,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 17,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.564958636382025,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-26T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-8bd4a0cd76cee74dab704b1b",
+            "decision_id": "forward-decision-7b48da836721934195c30f6a",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 26,
+              "excess_return": -0.014257248297863567,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 18,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.515848013710443,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-27T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-512bf31f368e0cbd3d23f063",
+            "decision_id": "forward-decision-7e9d4cb054cd8bd509fa7289",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 27,
+              "excess_return": -0.0005731262181400965,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 19,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.4694524753877665,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-28T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-40284fb54f25209979f1b59d",
+            "decision_id": "forward-decision-d7d228517fc3b49e766d1cf0",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 28,
+              "excess_return": -0.0005731262181400965,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 19,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.4255309007433032,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-29T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-ad93885e6b8a8dcaf847c07d",
+            "decision_id": "forward-decision-b8e8c00056fcab044182f265",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 29,
+              "excess_return": -0.0005731262181400965,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 19,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.3838711004203064,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met",
+              "frozen benchmark-relative requirement not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-30T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-85e93de6081ca0b0acf774fd",
+            "decision_id": "forward-decision-a9b0a0e92a62309abcb9e637",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 30,
+              "excess_return": 0.012936074797178954,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 20,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.3442855039415003,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2024-12-31T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          },
+          {
+            "cycle_id": "forward-cycle-5b83e0ffbb6753f8398b5fcc",
+            "decision_id": "forward-decision-6d2b5566fe65b119e907e01c",
+            "evidence": {
+              "cost_resilience": 0.7964832495324297,
+              "data_quality_failures": 0,
+              "degradation_policy_version": "phase3-degradation-v1",
+              "elapsed_days": 31,
+              "excess_return": 0.021450015474137274,
+              "maximum_drawdown": 0.009835524870687617,
+              "observations": 21,
+              "qualification_policy_version": "phase3-qualification-v1",
+              "qualified_forward_meaning": "paper observation only; no live execution approval",
+              "risk_breaches": 0,
+              "sharpe_ratio": 2.306607607233528,
+              "trades": 4
+            },
+            "new_state": "OBSERVING",
+            "previous_state": "OBSERVING",
+            "reasons": [
+              "minimum elapsed observation period not met",
+              "minimum independent observations not met",
+              "minimum completed trade count not met"
+            ],
+            "rule_id": "MINIMUM_EVIDENCE_PENDING",
+            "timestamp": "2025-01-01T00:00:00Z",
+            "trial_id": "forward-e17103a978d25f9bcc31"
+          }
+        ],
+        "manifest": {
+          "allocation_weight": 0.18,
+          "assets": [
+            {
+              "asset_class": "ETF",
+              "currency": "USD",
+              "exchange": "YAHOO",
+              "symbol": "QQQ"
+            }
+          ],
+          "baseline_profile": {
+            "annualised_volatility": 0.2,
+            "expectancy": 0.0,
+            "hit_rate": 0.5,
+            "signal_frequency": 0.4,
+            "source_experiment_id": "phase2-yahoo-demo-7e23dd823599693e:breakout:v1",
+            "turnover_per_observation": 0.02
+          },
+          "benchmark": {
+            "benchmark_id": "QQQ-buy-and-hold-v1",
+            "method": "BUY_AND_HOLD",
+            "symbols": [
+              "QQQ"
+            ],
+            "version": "v1"
+          },
+          "code_revision": "2ac0ba3108f244929fcb7c8f967be4f7dd6e96df",
+          "configuration_fingerprint": "e17103a978d25f9bcc3117c49e4cd15d1bd03ee1faa41e128863fb29589ef5c5",
+          "costs": {
+            "commission_bps": 2.0,
+            "fixed_fee": 0.25,
+            "minimum_commission": 0.25,
+            "slippage_bps": 3.0,
+            "spread_bps": 5.0
+          },
+          "created_at": "2024-12-01T00:00:00Z",
+          "data_policy": {
+            "adjustment_policy": "TOTAL_RETURN_ADJUSTED",
+            "corporate_action_policy": "frozen Phase 2 snapshot policy",
+            "interval": "1d",
+            "maximum_staleness": "P1DT12H",
+            "provider_name": "immutable-historical-replay",
+            "provider_version": "phase3-replay-v1",
+            "reject_gaps": true,
+            "version": "phase3-replay-data-v1",
+            "warmup_dataset_id": "phase2-yahoo-demo-7e23dd823599693e"
+          },
+          "degradation_policy": {
+            "fail_drawdown": 0.2,
+            "maximum_signal_frequency_ratio": 3.0,
+            "maximum_volatility_ratio": 2.0,
+            "minimum_observations": 20,
+            "pause_drawdown": 0.12,
+            "pause_excess_return": -0.1,
+            "pause_sharpe": -1.0,
+            "retire_after_failed_evaluations": 3,
+            "rolling_window": 20,
+            "version": "phase3-degradation-v1",
+            "warning_excess_return": -0.05,
+            "warning_sharpe": -0.5
+          },
+          "portfolio_id": "phase3-replay-7e23dd823599693e",
+          "portfolio_starting_capital": 300000.0,
+          "provenance": "REPLAY",
+          "qualification_policy": {
+            "maximum_data_quality_failures": 0,
+            "maximum_drawdown": 0.15,
+            "maximum_risk_breaches": 0,
+            "minimum_cost_resilience": 0.7,
+            "minimum_elapsed_days": 90,
+            "minimum_excess_return": 0.0,
+            "minimum_observations": 60,
+            "minimum_sharpe": 0.5,
+            "minimum_trades": 5,
+            "version": "phase3-qualification-v1"
+          },
+          "random_seed": 1729,
+          "risk_policy": {
+            "limits": {
+              "abnormal_price_move": 0.2,
+              "correlation_threshold": 0.85,
+              "maximum_asset_class_exposure": 0.6,
+              "maximum_concurrent_positions": 8,
+              "maximum_correlated_exposure": 0.4,
+              "maximum_daily_simulated_loss": 0.03,
+              "maximum_drawdown": 0.2,
+              "maximum_portfolio_exposure": 0.9,
+              "maximum_position_percentage": 0.2,
+              "maximum_trades_per_period": 20,
+              "maximum_turnover_per_period": 1.5,
+              "maximum_weekly_simulated_loss": 0.07,
+              "minimum_cash_reserve": 0.05,
+              "stale_after": "PT5M"
+            },
+            "maximum_strategy_allocation": 0.25,
+            "version": "phase3-paper-risk-v1"
+          },
+          "start_timestamp": "2024-12-01T00:00:00Z",
+          "strategy": {
+            "asset_class": "ETF",
+            "created_at": "2024-12-01T00:00:00Z",
+            "creation_method": "reference",
+            "creation_reason": "Reference strategy for engine validation",
+            "description": "Long on a close above the prior channel high.",
+            "eligible_regimes": [],
+            "entry_conditions": [
+              "close > prior 30-day highest close"
+            ],
+            "exit_conditions": [
+              "close no longer exceeds prior channel high"
+            ],
+            "indicators": [
+              {
+                "name": "highest_close",
+                "parameters": {
+                  "lookback": 30
+                }
+              }
+            ],
+            "name": "Breakout",
+            "parameters": {
+              "lookback": 30,
+              "strategy_type": "breakout"
+            },
+            "parent_strategy": null,
+            "permitted_assets": [
+              "QQQ"
+            ],
+            "position_sizing_method": "fractional_equity",
+            "state": "CREATED",
+            "stop_conditions": [],
+            "strategy_id": "breakout",
+            "timeframe": "1d",
+            "version": 1
+          },
+          "strategy_source_fingerprint": "3f695af396b1888116eb027a77928c47cb658bc84d52649d3b2716d67913cf45",
+          "trial_id": "forward-e17103a978d25f9bcc31",
+          "universe_version": "phase2-yahoo-demo-7e23dd823599693e:phase3-replay-universe-v1"
+        },
+        "minimum_evidence": {
+          "elapsed_days": 90,
+          "observations": 60,
+          "trades": 5
+        },
+        "missing_evidence": [
+          "minimum elapsed days",
+          "minimum observations",
+          "minimum completed trades"
+        ],
+        "observation_count": 21,
+        "portfolio_id": "phase3-replay-7e23dd823599693e",
+        "provenance": "REPLAY",
+        "qualification_meaning": "PAPER qualification only; no live execution approval",
+        "signal_count": 21,
+        "start_timestamp": "2024-12-01T00:00:00Z",
+        "state": "OBSERVING",
+        "strategy_version": "breakout:v1",
+        "trial_id": "forward-e17103a978d25f9bcc31"
+      }
+    ],
+    "note": "Replay states verify mechanics and are not genuine forward evidence.",
+    "qualified_forward_count": 0
+  }
+}

@@ -86,3 +86,20 @@ observation.
 Taxes, inflation, foreign-exchange conversion, borrowing, leverage, margin, shorting, derivatives,
 and live execution are absent. Historical, backtest, and paper results do not guarantee future
 profitability.
+
+## Forward observation and replay
+
+Genuine Phase 3 observations begin at the manifest's declared UTC start. Earlier frozen snapshot
+bars may warm indicators, but cannot become forward observations, elapsed evidence, or lifecycle
+credit. A current-data catch-up records unseen chronology; only the newest safe bar may advance the
+PAPER execution state, avoiding a claim that old backfilled decisions occurred in real time.
+
+Regime labels are recomputed from the prefix through each observed bar. Forward signals use that
+same prefix, and market orders retain the Phase 1/2 next-bar-open cost model. Benchmark return uses
+the frozen buy-and-hold/cash definition; portfolio comparison uses original trial weights plus
+zero-return reserve. Rolling degradation uses only committed forward snapshots.
+
+The engineering replay reveals a checksummed Phase 2 snapshot one timestamp per cycle and records
+mandatory `REPLAY` provenance in a separate database/evidence stream. Its results demonstrate
+idempotency, recovery, accounting, drift, and lifecycle mechanics; they are not forward performance
+claims and cannot qualify a genuine trial.
