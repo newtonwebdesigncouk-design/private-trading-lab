@@ -3,7 +3,7 @@
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import Field
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from app.models.enums import TradingMode
@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     trading_kill_switch: bool = False
     market_data_cache_dir: Path = Path("data/cache")
     random_seed: int = Field(default=1729, ge=0)
+    trading_lab_api_token: SecretStr | None = None
 
 
 @lru_cache
