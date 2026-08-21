@@ -3,7 +3,7 @@
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import Field
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from app.config.phase2 import Phase2Configuration
@@ -21,6 +21,7 @@ class Settings(BaseSettings):
     market_data_cache_dir: Path = Path("data/cache")
     random_seed: int = Field(default=1729, ge=0)
     phase2: Phase2Configuration = Field(default_factory=Phase2Configuration)
+    trading_lab_api_token: SecretStr | None = None
 
 
 @lru_cache

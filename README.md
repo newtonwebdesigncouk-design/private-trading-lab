@@ -78,8 +78,21 @@ uvicorn app.api.main:app --reload
 ```
 
 Alongside the Phase 1 strategy endpoints, Phase 2 exposes GET-only read models under `/data`,
-`/research`, `/portfolio`, and `/paper`. Interactive documentation is at `/docs`. The API has no
-action endpoint.
+`/research`, `/portfolio`, and `/paper`. The owner dashboard can also request deterministic
+reruns of immutable reference backtests. Interactive documentation is at `/docs`. The API has no
+live-trading or external-execution endpoint.
+
+## Private dashboard deployment
+
+`render.yaml` defines a free Frankfurt Render web service built from the repository's
+`Dockerfile`. During the first Blueprint deployment, set `TRADING_LAB_API_TOKEN` to the same
+strong random value stored by the private dashboard proxy. Render uses the public `/health`
+endpoint for availability checks; all research and portfolio endpoints require that bearer token
+when it is configured.
+
+The free Render service is suitable for private testing, but it has ephemeral local storage and can
+sleep when idle. Reference results are deterministic and regenerated from code, so no live trading
+state or broker connection is involved.
 
 ## Quality and safety gates
 

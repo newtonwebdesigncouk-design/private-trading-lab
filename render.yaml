@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: private-trading-lab-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    autoDeployTrigger: checksPass
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        value: sqlite:////laboratory/data/trading_lab.db
+      - key: TRADING_MODE
+        value: BACKTEST
+      - key: TRADING_KILL_SWITCH
+        value: "false"
+      - key: TRADING_LAB_API_TOKEN
+        sync: false
