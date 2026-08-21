@@ -49,6 +49,18 @@ Useful endpoints include `/safety`, `/portfolio`, `/strategies`,
 `/strategies/{strategy_id}:v{version}`, and `/research/experiments`. Interactive API documentation
 is at `/docs`.
 
+## Private dashboard deployment
+
+`render.yaml` defines a free Frankfurt Render web service built from the repository's
+`Dockerfile`. During the first Blueprint deployment, set `TRADING_LAB_API_TOKEN` to the same
+strong random value stored by the private dashboard proxy. Render uses the public `/health`
+endpoint for availability checks; all research and portfolio endpoints require that bearer token
+when it is configured.
+
+The free Render service is suitable for private testing, but it has ephemeral local storage and can
+sleep when idle. Reference results are deterministic and regenerated from code, so no live trading
+state or broker connection is involved.
+
 ## Quality checks
 
 ```bash
