@@ -6,47 +6,50 @@ This repository is a single-user, private-use algorithmic trading research labor
 
 ## Permanent safety boundary
 
-The project must remain physically incapable of transmitting a real-money financial order unless a separate future milestone explicitly changes that boundary after independent review.
+The project must remain physically incapable of transmitting a real-money financial order.
 
-For Phase 3, `TradingMode` must remain limited to `BACKTEST` and `PAPER`. A replay/testing label may exist for observation provenance, but it must not create a new execution mode.
+For Phase 4, `TradingMode` remains limited to `BACKTEST` and `PAPER`. Replay/genuine-forward labels are provenance labels only and must not become execution modes.
 
 Do not implement, enable, stub with real endpoints, or request trading credentials for:
 
-- live brokerage order submission
-- live crypto order submission
-- deposits or withdrawals
+- live brokerage or crypto order submission
+- deposits, withdrawals, transfers, or account funding
 - leverage or margin
 - options or futures execution
 - borrowed-asset short selling
 - automated movement of money
 - autonomous modification of the Risk Engine
+- customer/copy-trading features
+- an LLM directly deciding or transmitting trades
 
-Paper trading, replay, simulation, and genuine forward observation are permitted.
+Paper trading, replay, simulation, genuine forward observation, and bounded automated research are permitted.
 
-Outbound networking is permitted only inside explicitly approved read-only market-data providers. Market-data network code must remain isolated behind provider interfaces and must not expose order placement, account funding, withdrawal, transfer, or execution functionality.
+Outbound networking is permitted only inside explicitly approved read-only market-data providers. Market-data network code must remain isolated behind provider interfaces and must not expose order placement, funding, withdrawal, transfer, or execution functionality.
 
-No broker/exchange trading SDK should be required in Phase 3.
+No broker/exchange trading SDK should be required in Phase 4.
 
 If a read-only data provider requires a credential, it must come only from environment variables or a secret store and must grant no trading/funding permissions. Prefer credential-free sources where practical. Never commit credentials.
 
-Maintain tests and static safety checks that fail if a `LIVE` mode, external order transmitter, broker trading credential surface, money-movement API, unsafe HTTP method, trading SDK, or other execution path becomes possible.
+Maintain tests and static safety checks that fail if a `LIVE` mode, external order transmitter, trading credential surface, money-movement API, unsafe HTTP method, trading SDK, or other execution path becomes possible.
 
 ## Engineering priorities
 
 1. Capital preservation and auditability before return maximisation.
 2. Honest forward evidence before optimisation.
-3. Deterministic, reproducible backtests, replays, and paper cycles.
-4. No look-ahead bias, future-data leakage, or forward-period contamination.
-5. Immutable dataset snapshots, trial manifests, and provenance.
-6. Realistic fees, spreads, slippage, and conservative execution assumptions.
-7. Frozen forward-trial configuration and lifecycle thresholds.
-8. Independent Risk Engine with immutable/versioned risk policies.
-9. Restart-safe, idempotent orchestration and duplicate prevention.
-10. Strong typing, tests, linting, secret scanning, dependency auditing, and CI.
-11. Provider abstractions rather than tight coupling.
-12. Explainable deterministic methods before heavyweight ML.
-13. Treat zero qualifying strategies as a valid and useful outcome.
-14. Never claim replay/backtest performance is genuine forward performance.
+3. Robustness and benchmark-relative evidence before headline return.
+4. Deterministic, reproducible backtests, generations, replays, and PAPER cycles.
+5. No look-ahead bias, future-data leakage, or forward-period contamination.
+6. Immutable dataset snapshots, research generations, strategy versions, trial manifests, and provenance.
+7. Realistic fees, spreads, slippage, turnover, and conservative execution assumptions.
+8. Strong anti-overfitting and multiple-testing controls for large research batches.
+9. Frozen active-trial configuration and lifecycle thresholds.
+10. Independent Risk Engine with immutable/versioned risk policies and final authority.
+11. Restart-safe, idempotent orchestration and duplicate prevention.
+12. Bounded owner-controlled strategy grammar; no arbitrary executable-code generation.
+13. Strong typing, tests, linting, secret scanning, dependency auditing, and CI.
+14. Explainable deterministic methods before heavyweight ML.
+15. Treat zero retained/qualified strategies as a valid research outcome.
+16. Never claim replay/backtest performance is genuine forward performance.
 
 ## Recommended stack
 
@@ -57,29 +60,35 @@ Keep immutable historical/current market evidence content-addressed/checksummed 
 ## Working method
 
 - Work only on the requested dedicated branch.
-- Read `docs/PHASE3_SPEC.md` before implementing Phase 3.
-- Preserve completed Phase 1 and Phase 2 behaviour unless Phase 3 deliberately extends it.
+- Read `docs/PHASE4_SPEC.md` before implementing Phase 4.
+- Preserve completed Phase 1–3 behaviour unless Phase 4 deliberately extends it.
+- Extend working architecture rather than unnecessarily replacing it.
 - Keep commits small and descriptive.
 - Run tests, linting, type checking, safety scanning, dependency auditing, and secret detection before reporting completion.
 - Fix failures rather than merely listing them.
 - Do not commit secrets.
-- Keep every result reproducible from code revision, strategy version, trial ID, dataset/version, universe version, risk policy, parameters, costs, benchmark, and random seed where relevant.
+- Keep every result reproducible from code revision, research-generation ID, strategy version, trial ID, dataset/version, universe version, risk policy, allocation policy, costs, benchmark, cutoff timestamp, and random seed where relevant.
 - Never silently alter historical or forward evidence.
 - Never tune an active forward trial using observations produced after its start.
-- Never lower qualification thresholds retroactively to force a strategy to pass.
-- Any material strategy, benchmark, allocation, cost, risk, or qualification-policy change creates a new version/trial.
-- Genuine forward observations and historical replay records must remain clearly separated in persistence and reporting.
+- Never lower qualification/research thresholds after inspecting results to force a pass.
+- Never silently expand the candidate search space after seeing outcomes.
+- Any material strategy, benchmark, allocation, cost, risk, research, or qualification-policy change creates a new immutable version/generation/trial.
+- Genuine forward observations, locked historical hold-out results, historical research, and replay records must remain clearly separated in persistence and reporting.
+- Automated candidate generation must remain configuration-only within the approved grammar and must never write/execute arbitrary strategy source code.
+- Drift from an active trial may create a request for a future research generation, but must not mutate the active strategy.
 
 ## Completed baseline
 
-Phase 1 established deterministic strategy research, cost-aware backtesting, risk-first scoring, chronological validation, bounded strategy generation, an independent Risk Engine, local paper execution, experiment tracking, persistence, API endpoints, CI, and a hard no-live-execution boundary.
+Phase 1 established deterministic strategy research, cost-aware backtesting, risk-first scoring, chronological validation, bounded strategy generation, an independent Risk Engine, local PAPER execution, experiment tracking, persistence, API endpoints, CI, and the hard no-live-execution boundary.
 
-Phase 2 added genuine GET-only historical-data ingestion, immutable dataset provenance, corporate-action policy, multi-asset portfolio research, broader bounded research, multiple-testing diagnostics, deterministic regime analysis, portfolio risk controls, and restart-safe persistent paper simulation.
+Phase 2 added genuine GET-only historical-data ingestion, immutable dataset provenance, corporate-action policy, multi-asset portfolio research, broader bounded research, multiple-testing diagnostics, deterministic regime analysis, portfolio risk controls, and restart-safe persistent PAPER simulation.
 
-Treat the merged Phase 1 and Phase 2 implementation on `main` as the known-good baseline.
+Phase 3 added immutable forward trials, current read-only incremental data evidence, genuine subsequent-data observation, restart-safe idempotent forward PAPER cycles, multiple-strategy PAPER portfolios, lifecycle qualification/pause/fail rules, degradation/drift diagnostics, champion/challenger comparison, regime-aware observation, operational health/read models, and clearly separated replay verification.
 
-## Phase 3 completion definition
+Treat the merged Phase 1–3 implementation on `main` as the known-good baseline.
 
-Phase 3 must add frozen forward trials, current read-only incremental data collection, genuine subsequent-data observation, restart-safe idempotent forward paper cycles, multiple-strategy paper portfolios, lifecycle qualification/pause/fail rules, degradation/drift diagnostics, champion/challenger comparison, regime-aware observation, operational health/read models, and a clearly separated replay harness for engineering verification.
+## Phase 4 completion definition
 
-All Phase 3 functionality must remain incapable of placing or transmitting a real-money trade.
+Phase 4 must add immutable bounded research generations, approved configuration-only strategy grammar, candidate lineage/mutation, stronger anti-overfitting controls, research cutoffs, deterministic challenger admission into new Phase 3-compatible forward trials, champion/challenger governance, optional regime-aware PAPER allocation, ensemble/diversification research, research budgets, restart-safe research orchestration, read models, reporting, migrations, and tests.
+
+All Phase 4 functionality must remain incapable of placing or transmitting a real-money trade.
