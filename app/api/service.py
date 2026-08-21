@@ -48,6 +48,7 @@ class LaboratoryService:
             result.strategy.version_key: score_strategy(result) for result in self.results
         }
         self.phase2_demo_report = self._load_phase2_demo_report()
+        self.phase3_replay_report = self._load_phase3_replay_report()
 
     @staticmethod
     def _load_phase2_demo_report() -> dict[str, Any] | None:
@@ -57,6 +58,48 @@ class LaboratoryService:
         except (OSError, json.JSONDecodeError):
             return None
         return payload if isinstance(payload, dict) else None
+
+    @staticmethod
+    def _load_phase3_replay_report() -> dict[str, Any] | None:
+        report_path = Path(__file__).resolve().parents[2] / "reports" / "phase3_replay_report.json"
+        try:
+            payload = json.loads(report_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return None
+        return payload if isinstance(payload, dict) else None
+
+    def phase3_forward_read_model(self, section: str) -> dict[str, object]:
+        """Expose the committed replay demonstration without relabelling it as forward."""
+        report = self.phase3_replay_report
+        if report is None:
+            return {
+                "available": False,
+                "provenance": "REPLAY",
+                "reason": "The frozen Phase 3 replay report is not installed.",
+            }
+        value = report.get(section, {})
+        payload = dict(value) if isinstance(value, dict) else {"items": value}
+        return {
+            "available": True,
+            "provenance": "REPLAY",
+            "genuine_forward_trials_started": report.get("genuine_forward_trials_started", 0),
+            **payload,
+        }
+
+    def phase3_trial_detail(self, trial_id: str) -> dict[str, object] | None:
+        report = self.phase3_replay_report
+        if report is None:
+            return None
+        trials = report.get("trials", {})
+        items = trials.get("items", []) if isinstance(trials, dict) else []
+        return next(
+            (
+                dict(item)
+                for item in items
+                if isinstance(item, dict) and item.get("trial_id") == trial_id
+            ),
+            None,
+        )
 
     def active_dataset_id(self) -> str:
         if self.phase2_demo_report is not None:

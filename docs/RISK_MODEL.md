@@ -49,3 +49,19 @@ Risk scoring and paper qualification remain separate. The score emphasizes drawd
 preservation, while fixed qualification rules also require adequate samples, chronological
 consistency, cost robustness, and benchmark evidence. High raw return alone cannot qualify a
 strategy, and an empty qualification set is a valid outcome.
+
+## Forward PAPER risk budgets
+
+Every frozen Phase 3 trial receives a fixed cash sleeve and allocation weight at creation; unassigned
+capital remains a shared reserve. Sleeves may change only through their own simulated P&L and are
+not reweighted because of recent performance. The shared Risk Engine checks new local PAPER
+proposals against the frozen maximum strategy allocation and the existing instrument, asset-class,
+gross, correlation, cash, turnover/frequency, daily/weekly loss, drawdown, freshness,
+abnormal-move, and kill-switch limits. A sleeve buffer protects next-bar fills from making cash
+negative.
+
+Risk rejections are persisted with reasons and can automatically pause the affected trial.
+Paused/failed/retired trials cannot open exposure; an existing long position may still be reduced
+locally. Data-quality failures block a cycle with zero orders/fills until a subsequent checksum-valid,
+complete and fresh update resolves the event transactionally. Strategy/research code has no API for
+changing Risk Engine limits.

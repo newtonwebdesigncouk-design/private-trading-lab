@@ -7,6 +7,7 @@ from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from app.config.phase2 import Phase2Configuration
+from app.config.phase3 import Phase3Configuration
 from app.models.enums import TradingMode
 
 
@@ -21,6 +22,7 @@ class Settings(BaseSettings):
     market_data_cache_dir: Path = Path("data/cache")
     random_seed: int = Field(default=1729, ge=0)
     phase2: Phase2Configuration = Field(default_factory=Phase2Configuration)
+    phase3: Phase3Configuration = Field(default_factory=Phase3Configuration)
     trading_lab_api_token: SecretStr | None = None
 
 

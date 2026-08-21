@@ -14,3 +14,4 @@ data/cache/
 data/*.db
 reports/*
 !reports/phase2_demo_report.json
+!reports/phase3_replay_report.json

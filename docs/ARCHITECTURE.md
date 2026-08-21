@@ -29,8 +29,11 @@ Pydantic values where practical; persistence models stay behind SQLAlchemy repos
   cost stress, locked holdout selection, and qualified strategy portfolios.
 - `app/paper_trading`: restart-safe, idempotent local cycles with persisted accounts, orders,
   fills, snapshots, failures, and audit events.
+- `app/forward`: immutable trial manifests, chained evidence, one-cycle orchestration, concurrent
+  cash sleeves, benchmark/drift analytics, lifecycle governance, replay, and dashboard read models.
 - `app/database`: insert-oriented dataset, universe, batch, regime, experiment, and paper records.
-- `app/api`: GET-only local read models for health, research, portfolios, and paper state.
+- `app/api`: preserves Phase 1/2 routes and adds bearer-protected GET-only Phase 3 observatory
+  routes. No forward mutation or order endpoint exists.
 
 ## Data and chronology flow
 
@@ -66,6 +69,12 @@ Generated specifications cannot edit source files, risk limits, provider setting
 thresholds. A portfolio of strategies can contain only strategies whose qualification state allows
 paper observation, with bounded weights.
 
+Phase 3 forward records use separate trial, observation, and performance tables and carry mandatory
+`GENUINE_FORWARD` or `REPLAY` provenance. Research and candidate generation have no dependency on
+the forward repository. A complete manifest hash binds the active strategy, parameters, universe,
+benchmark, costs, allocations, capital, risk/data policies, governance thresholds, start, seed, and
+code revision. Persisted manifests are validated on every load; a change has a different trial ID.
+
 ## Persistence and idempotency
 
 Migration `0002_phase_2_persistence` extends, rather than replaces, the Phase 1 schema. Dataset
@@ -78,6 +87,18 @@ The persistent paper lab first checks the global kill switch and dataset freshne
 pending simulated orders, fills them only from frozen later bars, creates new local orders, and
 writes audit entries for every decision. Its scheduler contract triggers that same cycle service;
 it does not create an external execution channel.
+
+Migration `0003_phase_3` adds forward trials, evidence manifests, leases, cycles, observations,
+signals, local orders/fills, benchmark and portfolio snapshots, lifecycle/data-quality/degradation,
+and audit events. A Phase 3 cycle ID hashes portfolio, immutable evidence manifest, market time, and
+provenance. A completed/blocked delivery is a no-op; a failed/in-progress delivery increments its
+retry counter and recomputes from the last committed portfolio. Evidence, positions, metrics,
+lifecycle state, and completion commit in one database transaction.
+
+Current-data ingestion appends a checksummed directory linked to the prior manifest. Backfilled
+bars may be recorded as observations, but only the newest safe bar in a catch-up invocation may
+advance the local PAPER account or create a signal/order. Replay uses the identical orchestration
+path in a separate database/evidence stream with mandatory `REPLAY` provenance.
 
 ## Safety and dependency direction
 

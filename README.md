@@ -3,7 +3,9 @@
 A private, single-user laboratory for testing whether systematic strategies exhibit robust,
 risk-adjusted performance after realistic costs. Phase 2 adds genuine provider-backed historical
 data, immutable datasets, multi-asset portfolios, bounded research batches, and persistent paper
-simulation. It remains simulation-only: no live execution mode, order transmitter, broker or
+simulation. Phase 3 adds frozen forward trials, incremental current-data evidence, concurrent
+PAPER strategy sleeves, deterministic lifecycle/drift governance, and a GET-only observatory. It
+remains simulation-only: no live execution mode, order transmitter, broker or
 exchange SDK, credential field, funding path, leverage, margin, derivatives, or short selling
 exists.
 
@@ -23,7 +25,8 @@ backtest, and paper results do not guarantee future profitability.
   trading SDKs, unsafe modes, non-GET provider requests, or networking outside approved data
   modules.
 
-See [AGENTS.md](AGENTS.md), [docs/PHASE2_SPEC.md](docs/PHASE2_SPEC.md),
+See [AGENTS.md](AGENTS.md), [docs/PHASE3_SPEC.md](docs/PHASE3_SPEC.md),
+[docs/FORWARD_OBSERVATORY.md](docs/FORWARD_OBSERVATORY.md),
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md),
 and [docs/RISK_MODEL.md](docs/RISK_MODEL.md).
 
@@ -71,14 +74,42 @@ frozen bars, checks freshness and the kill switch, restores pending simulated or
 fills, and commits the account snapshot and audit trail atomically. Re-running the same completed
 cycle performs no duplicate work.
 
+## Phase 3 forward PAPER observatory
+
+A forward trial freezes the strategy/version/parameters, assets, benchmark, costs, capital sleeve,
+risk and data policies, qualification/degradation rules, start time, seed, and code revision into a
+content-derived fingerprint. After its start, changing any material value means creating a new
+strategy version and trial. Forward observations live in separate tables and evidence streams;
+research selection never reads them.
+
+The checked-in engineering demonstration is explicit historical `REPLAY`, not forward evidence:
+
+```bash
+python -m scripts.run_phase3_replay
+```
+
+Genuine observation is owner initiated. Copy `config/phase3_forward.example.json`, choose a new
+portfolio ID and a current/future UTC start, then create the entire concurrent trial set once:
+
+```bash
+python -m scripts.create_forward_trials --config config/my_phase3_forward.json
+python -m scripts.run_forward_cycle --portfolio my-forward-portfolio
+```
+
+`run_forward_cycle` performs one lease-protected, restart-safe cycle and exits. It uses the existing
+credential-free Yahoo Chart adapter through the sole GET-only provider transport. Unsafe evidence
+blocks simulated decisions and records an actionable event. The provider path is disabled by
+default and no genuine trial starts automatically. `QUALIFIED_FORWARD` is PAPER-only.
+
 ## Local read API
 
 ```bash
 uvicorn app.api.main:app --reload
 ```
 
-Alongside the Phase 1 strategy endpoints, Phase 2 exposes GET-only read models under `/data`,
-`/research`, `/portfolio`, and `/paper`. The owner dashboard can also request deterministic
+Alongside the Phase 1 strategy endpoints, Phase 2 exposes read models under `/data`, `/research`,
+`/portfolio`, and `/paper`; Phase 3 adds bearer-protected GET-only `/forward` read models for trials,
+performance, portfolio, health, cycles, and data quality. The owner dashboard can request deterministic
 reruns of immutable reference backtests. Interactive documentation is at `/docs`. The API has no
 live-trading or external-execution endpoint.
 
@@ -121,6 +152,10 @@ approved GET-only provider -> normalize/validate -> immutable checksummed snapsh
                               +--> benchmark/regime/attribution reports
 
 frozen snapshot -> idempotent paper cycle -> local simulated orders/fills -> SQL audit
+
+approved GET-only current data -> append-only evidence -> frozen concurrent PAPER trials
+                                             |                       |
+                                             +-> regime/drift/lifecycle/risk -> GET-only observatory
 ```
 
 SQLAlchemy 2 and Alembic back persistence. SQLite is the local default; the schema and transaction
