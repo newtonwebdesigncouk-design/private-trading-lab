@@ -12,4 +12,5 @@ build/
 *.egg-info/
 data/cache/
 data/*.db
-reports/
+reports/*
+!reports/phase2_demo_report.json

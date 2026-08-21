@@ -1,0 +1,29 @@
+{
+  "assets": [
+    {
+      "asset_class": "ETF",
+      "exchange": "YAHOO",
+      "provider_symbol": "SPY",
+      "symbol": "SPY"
+    },
+    {
+      "asset_class": "ETF",
+      "exchange": "YAHOO",
+      "provider_symbol": "QQQ",
+      "symbol": "QQQ"
+    },
+    {
+      "asset_class": "CRYPTOCURRENCY",
+      "exchange": "YAHOO",
+      "provider_symbol": "BTC-USD",
+      "symbol": "BTCUSD"
+    }
+  ],
+  "dataset_name": "phase2-yahoo-demo",
+  "end": "2025-01-01T00:00:00Z",
+  "interval": "1d",
+  "maximum_attempts": 3,
+  "snapshot_root": "data/snapshots",
+  "start": "2020-01-01T00:00:00Z",
+  "timeout_seconds": 20
+}

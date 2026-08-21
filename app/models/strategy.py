@@ -40,6 +40,7 @@ class StrategySpec(BaseModel):
     entry_conditions: tuple[str, ...]
     exit_conditions: tuple[str, ...]
     stop_conditions: tuple[str, ...] = ()
+    eligible_regimes: tuple[str, ...] = ()
     position_sizing_method: str = "fractional_equity"
     parameters: Mapping[str, float | int | str | bool] = Field(default_factory=dict)
     creation_method: str = "reference"

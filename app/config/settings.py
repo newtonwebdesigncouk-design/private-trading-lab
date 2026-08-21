@@ -6,11 +6,12 @@ from pathlib import Path
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from app.config.phase2 import Phase2Configuration
 from app.models.enums import TradingMode
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra="forbid")
+    model_config = SettingsConfigDict(env_file=".env", env_nested_delimiter="__", extra="forbid")
 
     app_env: str = "development"
     database_url: str = "sqlite:///./data/trading_lab.db"
@@ -19,6 +20,7 @@ class Settings(BaseSettings):
     trading_kill_switch: bool = False
     market_data_cache_dir: Path = Path("data/cache")
     random_seed: int = Field(default=1729, ge=0)
+    phase2: Phase2Configuration = Field(default_factory=Phase2Configuration)
     trading_lab_api_token: SecretStr | None = None
 
 

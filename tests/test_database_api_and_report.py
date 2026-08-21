@@ -141,7 +141,8 @@ def test_dashboard_token_protects_private_routes(monkeypatch: pytest.MonkeyPatch
     protected_client = TestClient(create_app())
     try:
         assert protected_client.get("/health").status_code == 200
-        assert protected_client.get("/strategies").status_code == 401
+        for path in ("/strategies", "/data/providers", "/paper/cycles"):
+            assert protected_client.get(path).status_code == 401
         assert (
             protected_client.get(
                 "/strategies",
@@ -152,6 +153,13 @@ def test_dashboard_token_protects_private_routes(monkeypatch: pytest.MonkeyPatch
         assert (
             protected_client.get(
                 "/strategies",
+                headers={"Authorization": "Bearer test-dashboard-token"},
+            ).status_code
+            == 200
+        )
+        assert (
+            protected_client.get(
+                "/data/providers",
                 headers={"Authorization": "Bearer test-dashboard-token"},
             ).status_code
             == 200

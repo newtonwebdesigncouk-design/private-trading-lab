@@ -6,10 +6,22 @@ from app.paper_trading.engine import (
     PaperPortfolioSnapshot,
     PaperTradingEngine,
 )
+from app.paper_trading.persistent import (
+    FixedIntervalPaperScheduler,
+    PaperCycleResult,
+    PaperCycleStatus,
+    PersistentPaperLab,
+    PersistentPaperRepository,
+)
 
 __all__ = [
+    "FixedIntervalPaperScheduler",
     "InMemoryAuditSink",
     "PaperAccount",
+    "PaperCycleResult",
+    "PaperCycleStatus",
     "PaperPortfolioSnapshot",
     "PaperTradingEngine",
+    "PersistentPaperLab",
+    "PersistentPaperRepository",
 ]

@@ -44,3 +44,16 @@ class OrderStatus(StrEnum):
     FILLED = "FILLED"
     REJECTED = "REJECTED"
     CANCELLED = "CANCELLED"
+
+
+class CorporateActionType(StrEnum):
+    STOCK_SPLIT = "STOCK_SPLIT"
+    CASH_DIVIDEND = "CASH_DIVIDEND"
+
+
+class AdjustmentPolicy(StrEnum):
+    """Explicit policies prevent price and cash-return double counting."""
+
+    UNADJUSTED_WITH_ACTIONS = "UNADJUSTED_WITH_ACTIONS"
+    SPLIT_ADJUSTED_WITH_CASH_DIVIDENDS = "SPLIT_ADJUSTED_WITH_CASH_DIVIDENDS"
+    TOTAL_RETURN_ADJUSTED = "TOTAL_RETURN_ADJUSTED"
